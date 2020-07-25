@@ -1,0 +1,19 @@
+package com.buba.cloud.cloudManor.mapper;
+
+import com.buba.cloud.cloudManor.pojo.User;
+import tk.mybatis.mapper.common.Mapper;
+
+/**
+ * @ProjectName: cloud-manor-java
+ * @Package: com.buba.cloud.cloudManor.mapper
+ * @ClassName: BuyMapper
+ * @Author: ggx
+ * @Description:
+ * @Date: 2020/7/24 0024 16:17
+ * @Version: 1.0
+ */
+public interface BuyMapper extends Mapper<User>{
+
+//    //通过资源id获取养护人信息
+//    User obtainMaintenancePeopleMessage(Integer resourceId);
+}
