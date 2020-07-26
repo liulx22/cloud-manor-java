@@ -7,15 +7,11 @@ import tk.mybatis.mapper.common.Mapper;
 /**
  * @ProjectName: cloud-manor-java
  * @Package: com.buba.cloud.cloudManor.mapper
- * @ClassName: BuyMapper
+ * @ClassName: ResourceMapper
  * @Author: ggx
  * @Description:
- * @Date: 2020/7/24 0024 16:17
+ * @Date: 2020/7/26 0026 12:56
  * @Version: 1.0
  */
-public interface BuyMapper extends Mapper<User>{
-    //通过资源id获取养护人信息
-    User obtainMaintenancePeopleMessage(Integer resourceId);
-    //通过资源id查询资源信息
-    Resource resourceMessage(Integer resourceId);
+public interface ResourceMapper extends Mapper<Resource> {
 }

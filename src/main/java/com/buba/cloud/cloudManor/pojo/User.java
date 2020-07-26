@@ -1,8 +1,10 @@
 package com.buba.cloud.cloudManor.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,6 +33,8 @@ public class User {
     private String phone;  //手机号码
     private String email;  //邮箱
     private Integer sex;  //性别
+    @DateTimeFormat(pattern ="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
     private Date birthday;  //生日
     private Integer imageId;  //关联图片表Image的id
     private Integer addressId; //关联Address表中pid不为0的id
@@ -41,4 +45,6 @@ public class User {
      * 0:庄园主
      * 1:养护人
      * */
+
+    private String imgDir;
 }

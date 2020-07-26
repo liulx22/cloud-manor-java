@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Table;
+
 /**
  * @Classname ResourceAnimalDetail
  * @Description 畜牧业的资源详情
@@ -13,6 +15,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@Table(name = "resourceanimaldetail")
 public class ResourceAnimalDetail {
     private Integer resourceId;//资源id
     private String breedName;//牲畜品种

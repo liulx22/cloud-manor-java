@@ -1,8 +1,10 @@
 package com.buba.cloud.cloudManor.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,9 +30,15 @@ public class Resource {
     private String title;//标题
     private String reTypeCode;//资源类型的英文名称
     private Integer uid;//发布资源用户id
+    @DateTimeFormat(pattern ="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
     private Date publicDate;//发布时间
-
+    private Integer imageId;
+    private String imgDir;
     //图片信息，视频信息关联图片表
     //浏览量，关注量，收藏量都用缓存实现
+    private ResourceAnimalDetail resourceAnimalDetail;
+    private ResourceGroundDetail resourceGroundDetail;
+    private ResourceTreeDetail resourceTreeDetail;
 
 }

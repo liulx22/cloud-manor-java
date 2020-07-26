@@ -1,6 +1,8 @@
 package com.buba.cloud.cloudManor.service;
 
-import com.buba.cloud.cloudManor.pojo.User;
+import com.buba.cloud.cloudManor.pojo.*;
+
+import java.util.List;
 
 /**
  * @ProjectName: cloud-manor-java
@@ -14,5 +16,13 @@ import com.buba.cloud.cloudManor.pojo.User;
 public interface BuyService{
     //通过资源id获取养护人信息
     User obtainMaintenancePeopleMessage(Integer resourceId);
+    //通过资源id查询资源信息
+    Resource resourceMessage(Integer resourceId);
+    //通过资源id查询树木具体信息
+    ResourceTreeDetail resourceFruiterMessage(Integer resourceId);
+    //通过资源id查询畜牧具体信息
+    ResourceAnimalDetail resourceLivestockMessage(Integer resourceId);
+    //通过资源id查询地块具体信息
+    ResourceGroundDetail resourcePlotMessage(Integer resourceId);
 
 }
