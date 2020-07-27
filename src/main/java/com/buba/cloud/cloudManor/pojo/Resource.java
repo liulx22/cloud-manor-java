@@ -40,5 +40,5 @@ public class Resource {
     private ResourceAnimalDetail resourceAnimalDetail;
     private ResourceGroundDetail resourceGroundDetail;
     private ResourceTreeDetail resourceTreeDetail;
-
+    private Double money;//金额
 }
