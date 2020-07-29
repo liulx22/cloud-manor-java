@@ -52,4 +52,5 @@ public class MyManorServiceImpl implements MyManorService {
     public List<OrderAgricultureVO> getOrderAgriculture(Integer userId) {
         return myManorMapper.getOrderAgriculture(userId);
     }
+
 }
