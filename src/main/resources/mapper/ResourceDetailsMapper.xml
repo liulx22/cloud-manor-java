@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.ResourceDetailsMapper">
+    <!--/*获取农事*/
+    Agriculture GETAgriculture(@Param("id") int id);-->
+    <select id="GETAgriculture" resultType="com.buba.cloud.cloudManor.pojo.Agriculture">
+        select id,content,MAX(put_time)
+        FROM agriculture
+        WHERE resource_id=#{id}
+        ORDER BY put_time
+    </select>
+   <!-- /*获取养护记录*/
+    List<AgricultureOperation> GETAgricultureOperation(@Param("id") int id);-->
+    <select id="GETAgricultureOperation" resultType="com.buba.cloud.cloudManor.pojo.AgricultureOperation">
+        select * from agricultureOperation as a,img_rlation,image,digital
+        where a.resource_id=img_rlation.otherId
+        and img_rlation.imageId=image.id
+        and image.typecode=digital.code
+        and digital.code=""
+    </select>
+</mapper>
