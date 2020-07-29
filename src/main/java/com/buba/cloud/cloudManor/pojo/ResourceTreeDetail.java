@@ -30,4 +30,5 @@ public class ResourceTreeDetail {
     private Date leaseTime;//承包时间
     private String geographicPosition;//位置
 
+  
 }

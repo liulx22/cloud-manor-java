@@ -67,7 +67,8 @@ public class BuyServiceImpl implements BuyService {
      */
     @Override
     public ResourceTreeDetail resourceFruiterMessage(Integer resourceId) {
-        return resourceTreeDetailMapper.selectOne(new ResourceTreeDetail().setResourceId(resourceId));
+        ResourceTreeDetail resourceTreeDetail = resourceTreeDetailMapper.selectOne(new ResourceTreeDetail().setResourceId(resourceId));
+        return resourceTreeDetail;
     }
     /**
      * 功能描述:通过资源id查询畜牧具体信息
