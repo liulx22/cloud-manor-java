@@ -13,6 +13,6 @@ public class Attention {
     private Integer id;
     private Integer fromUserId;//关注人的id
     private Integer destUserId;//被关注人的id
-
+    private Integer codeType;
 
 }
