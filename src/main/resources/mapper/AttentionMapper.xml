@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.AttentionMapper">
+    <select id="SelAttrntion" resultType="com.buba.cloud.cloudManor.pojo.UserAttentionVo">
+     SELECT
+	u.id userId,
+	i.img_name,
+	i.img_dir ,
+	u.user_name,
+	u.phone,
+	u.email,
+	u.sex
+FROM
+	`user` u,
+	image i,
+	attention a,
+	digital d
+
+WHERE
+	u.id = a.from_user_id
+	AND u.image_id = i.id
+	and d.id=i.id
+	and d.type='image'
+    </select>
+    <delete id="CancelTheAttention">
+        delete from attention where from_user_id=#{userId}
+    </delete>
+    <insert id="Attrntion">
+        insert into attention(from_user_id, dest_user_id)values(#{userId},#{userId});
+    </insert>
+</mapper>
