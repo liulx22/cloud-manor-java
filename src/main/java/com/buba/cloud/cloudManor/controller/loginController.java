@@ -1,6 +1,7 @@
 package com.buba.cloud.cloudManor.controller;
 
 import com.buba.cloud.cloudManor.service.LoginService;
+import com.buba.cloud.cloudManor.utils.RedisUtils;
 import com.buba.cloud.cloudManor.utils.SendSms;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class loginController {
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisUtils redisUtils;
 
     @Autowired
     private LoginService loginService;
@@ -25,7 +26,7 @@ public class loginController {
     public boolean yzm(String phone){
         int code = (int) ((Math.random()*9+1)*1000);
        // boolean sendMSM = SendSms.sendMSM(phone,String.valueOf(code));
-        redisTemplate.expire("code",  60, TimeUnit.SECONDS);
+        redisUtils.set("code",code,60);
         System.out.println(code);
         if(true){
             return true;
@@ -38,10 +39,10 @@ public class loginController {
 
     //登陆
     @RequestMapping("login")
-    public boolean login(String phone,String code){
-        Long yzm=redisTemplate.getExpire("code");
+    public boolean login(String phone,String yzm){
+        String code=(String)redisUtils.get("code");
         System.out.println(yzm);
-        if(code.equals(yzm)){
+        if(yzm==code){
             String b=loginService.findphone(phone);
             if(b!=""){
                 return true;
