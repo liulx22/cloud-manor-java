@@ -41,4 +41,6 @@ public class Resource {
     private ResourceGroundDetail resourceGroundDetail;
     private ResourceTreeDetail resourceTreeDetail;
     private Double money;//金额
+    private int masterId;//庄主id
+    private int masterType;//是否被承包 1表示承包中 0表示未承包
 }

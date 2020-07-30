@@ -17,7 +17,7 @@ public class arithmeticTest {
     public static void main(String[] args) throws ParseException {
 
        /* int[] arr = {12,11,14,19,17,16,15};*/
-        Random r = new Random();
+        /*Random r = new Random();
         int[] arr =new int[80000];
         for (int o=0;o<arr.length;o++){
             arr[o]= r.nextInt(80000);
@@ -28,11 +28,30 @@ public class arithmeticTest {
         long millionSeconds = df.parse(df.format(new Date())).getTime();//毫秒
         System.out.println("kai="+millionSeconds);
         kuaishu(arr,0,arr.length-1);
-        /*maopao(arr);//冒泡*/
+        *//*maopao(arr);//冒泡*//*
         long millionSeconds2 = df.parse(df.format(new Date())).getTime();//毫秒
         System.out.println("jie="+millionSeconds2);
-        System.out.println(millionSeconds2-millionSeconds);
-
+        System.out.println(millionSeconds2-millionSeconds);*/
+        String str1="BBC ABCDAB ABCDABCDABDE";
+        String str2="ABCDABD";
+        int s=baolipipai(str1,str2);
+        System.out.println(s);
+    }
+    /*字符串匹配  暴力匹配算法*/
+    public static int baolipipai(String str1,String str2){
+        //声明两个，循环str1
+        for(int i=0,j=0;i<str1.length();i++){
+            if(j>0 && str1.charAt(i)!=str2.charAt(j)){
+                i=i-j;
+                j=0;
+            }else if(str1.charAt(i)==str2.charAt(j)){
+                j++;
+            }
+            if(j==str2.length()){
+                return i-(j-1);
+            }
+        }
+        return -1;
     }
     /*快速*/
     public static void kuaishu(int[] arr,int left,int right){

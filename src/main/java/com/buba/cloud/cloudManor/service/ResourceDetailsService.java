@@ -7,10 +7,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+/**
+ * 孙智慧
+ * 资源详情
+ * */
+
 public interface ResourceDetailsService {
     /*获取农事*/
-    Agriculture GETAgriculture(int id);
+    Agriculture GETAgriculture(int rid,int mid);
+    /*提交农事*/
+    boolean INSAgriculture(Agriculture agriculture);
     /*获取养护记录*/
-    List<AgricultureOperation> GETAgricultureOperation(int id);
+    List<AgricultureOperation> GETAgricultureOperation(int rid,int mid);
 }

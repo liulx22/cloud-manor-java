@@ -4,6 +4,7 @@ import com.buba.cloud.cloudManor.mapper.ResourceDetailsMapper;
 import com.buba.cloud.cloudManor.pojo.Agriculture;
 import com.buba.cloud.cloudManor.pojo.AgricultureOperation;
 import com.buba.cloud.cloudManor.service.ResourceDetailsService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,19 +16,24 @@ import java.util.List;
  * \* 模块:资源详情
  * \
  */
+@Service
 public class ResourceDetailsServiceImpl implements ResourceDetailsService {
     @Resource
     private ResourceDetailsMapper resourceDetailsMapper;
 
 
     @Override
-    public Agriculture GETAgriculture(int id) {
-        return resourceDetailsMapper.GETAgriculture(id);
+    public Agriculture GETAgriculture(int rid,int mid) {
+        return resourceDetailsMapper.GETAgriculture(rid,mid);
     }
 
     @Override
-    public List<AgricultureOperation> GETAgricultureOperation(int id) {
+    public boolean INSAgriculture(Agriculture agriculture) {
+        return resourceDetailsMapper.INSAgriculture(agriculture);
+    }
 
-        return resourceDetailsMapper.GETAgricultureOperation(id);
+    @Override
+    public List<AgricultureOperation> GETAgricultureOperation(int rid,int mid) {
+        return resourceDetailsMapper.GETAgricultureOperation(rid,mid);
     }
 }

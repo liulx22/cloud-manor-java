@@ -1,5 +1,7 @@
 package com.buba.cloud.cloudManor.pojo;
 
+import lombok.Data;
+
 import java.util.Date;
 
 /**
@@ -8,6 +10,7 @@ import java.util.Date;
  * @Date 2020/7/23 15:14
  * @Created by liulx
  */
+@Data
 public class Order {
     private Integer id;
     private String orderNo;//订单编号   yyyymmddxxx

@@ -5,18 +5,29 @@
     <!--/*获取农事*/
     Agriculture GETAgriculture(@Param("id") int id);-->
     <select id="GETAgriculture" resultType="com.buba.cloud.cloudManor.pojo.Agriculture">
-        select id,content,MAX(put_time)
-        FROM agriculture
-        WHERE resource_id=#{id}
-        ORDER BY put_time
+        select agriculture.id,agriculture.content,agriculture.put_time
+        FROM agriculture,rseource
+        WHERE rseource.id=agriculture.resource_id
+        and rseource.master_id=#{mid}
+        and agriculture.resource_id=#{rid}
+        ORDER BY agriculture.put_time DESC LIMIT 0,1
     </select>
+    <!--/*提交农事*/
+    boolean INSAgriculture(@Param("agriculture")Agriculture agriculture);-->
+    <insert id="INSAgriculture" parameterType="com.buba.cloud.cloudManor.pojo.Agriculture">
+        insert into agriculture (user_id,put_time,resource_id,content,code)
+        values (#{agriculture.userId},now(),#{agriculture.resourceId},#{agriculture.content},1)
+    </insert>
    <!-- /*获取养护记录*/
-    List<AgricultureOperation> GETAgricultureOperation(@Param("id") int id);-->
+    List<AgricultureOperation> GETAgricultureOperation(@Param("id") int rid，int mid);-->
     <select id="GETAgricultureOperation" resultType="com.buba.cloud.cloudManor.pojo.AgricultureOperation">
-        select * from agricultureOperation as a,img_rlation,image,digital
-        where a.resource_id=img_rlation.otherId
-        and img_rlation.imageId=image.id
-        and image.typecode=digital.code
-        and digital.code=""
+        select a.id,a.oper_time,a.title,image.img_name,image.img_dir
+        from agriculture_operation as a,img_rlation,image,rseource
+        where rseource.id=a.resource_id
+        and a.id=img_rlation.other_id
+        and img_rlation.image_id=image.id
+		and rseource.master_id=#{mid}
+        and image.type_code="resource"
+        and a.resource_id=#{rid}
     </select>
 </mapper>

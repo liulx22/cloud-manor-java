@@ -25,15 +25,22 @@ public class ResourceDetailsController {
     /*农事记录*/
     @RequestMapping("getAgriculture")
     @ResponseBody
-    public Agriculture getAgriculture(int id){
-        Agriculture a = resourceDetailsService.GETAgriculture(id);
+    public Agriculture getAgriculture(Integer rid,Integer mid){
+        Agriculture a = resourceDetailsService.GETAgriculture(rid,mid);
         return a;
+    }
+    /*提交农事提醒*/
+    @RequestMapping("insAgriculture")
+    @ResponseBody
+    public boolean insAgriculture(Agriculture agriculture){
+        boolean b=resourceDetailsService.INSAgriculture(agriculture);
+        return b;
     }
     /*养护记录*/
     @RequestMapping("getAgricultureOperation")
     @ResponseBody
-    public List<AgricultureOperation> getAgricultureOperation(int id){
-        List<AgricultureOperation> list= resourceDetailsService.GETAgricultureOperation(id);
+    public List<AgricultureOperation> getAgricultureOperation(Integer rid,Integer mid){
+        List<AgricultureOperation> list= resourceDetailsService.GETAgricultureOperation(rid,mid);
         return list;
     }
 }
