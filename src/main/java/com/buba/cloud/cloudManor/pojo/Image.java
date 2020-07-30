@@ -27,4 +27,7 @@ public class Image {
     private String typeCode;//关联Digital表中图片类型的code
     private String imgName;//图片名称
     private String imgDir;//存放路径
+    private String userName;//中文名
+
+
 }

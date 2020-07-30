@@ -9,14 +9,19 @@
 	i.img_dir ,
 	u.user_name,
 	u.phone,
-	u.email
+	u.email,
+	u.sex
 FROM
 	`user` u,
 	image i,
-	attention a
+	attention a,
+	digital d
+
 WHERE
 	u.id = a.from_user_id
 	AND u.image_id = i.id
+	and d.id=i.id
+	and d.type='image'
     </select>
     <delete id="CancelTheAttention">
         delete from attention where from_user_id=#{userId}

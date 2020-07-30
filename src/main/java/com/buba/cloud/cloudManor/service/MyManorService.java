@@ -1,11 +1,12 @@
-package com.buba.cloud.cloudManor.mapper;
+package com.buba.cloud.cloudManor.service;
 
 import com.buba.cloud.cloudManor.pojo.OrderAgricultureVO;
 
 import java.util.List;
 
-public interface MyManorMapper {
-   //获取我的关注数量
+public interface MyManorService {
+
+    //获取我的关注数量
     int getAttentionNum(Integer userId);
     //获取我的喜欢数量
     int getMyLikeNum(Integer userId);
