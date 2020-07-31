@@ -17,7 +17,8 @@ import java.util.Date;
  * @Date 2020/7/17 9:11
  * @Created by liulx
  */
-@Data
+
+
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 public class User {

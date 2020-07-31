@@ -6,6 +6,7 @@ import com.buba.cloud.cloudManor.pojo.ResourceAnimalDetail;
 import com.buba.cloud.cloudManor.pojo.ResourceGroundDetail;
 import com.buba.cloud.cloudManor.pojo.ResourceTreeDetail;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
 
@@ -19,7 +20,7 @@ import tk.mybatis.mapper.common.Mapper;
  * @Version: 1.0
  */
 
-@org.apache.ibatis.annotations.Mapper
+@Repository
 public interface ResourceMapper extends Mapper<Resource> {
     Resource selectLardResource();
 

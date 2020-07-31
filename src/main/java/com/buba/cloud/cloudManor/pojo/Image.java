@@ -29,6 +29,7 @@ public class Image {
     private String userName;//中文名
     private Integer typeCode;//关联Digital表中图片类型的code
 
+
     public String getUserName() {
         return userName;
     }

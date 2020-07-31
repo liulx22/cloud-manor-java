@@ -15,17 +15,17 @@ public class UserLikeServiceImpl implements UserLikeService {
     @Autowired
     private UserLikeMapper userLikeMapper;
     @Override
-    public List<Resource> selectUserLike(Integer userId) {
+    public List<UserLike> selectUserLike(Integer userId) {
         return userLikeMapper.selectUserLike(userId);
     }
 
     @Override
-    public boolean addUserLike(UserLike userLike) {
+    public int addUserLike(UserLike userLike) {
         return userLikeMapper.addUserLike(userLike);
     }
 
     @Override
-    public boolean deleUserLike(UserLike userLike) {
+    public int deleUserLike(UserLike userLike) {
         return userLikeMapper.deleUserLike(userLike);
     }
 }

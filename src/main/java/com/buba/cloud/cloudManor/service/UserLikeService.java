@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface UserLikeService {
     //查询喜欢的作品
-    List<Resource> selectUserLike(Integer userId);
+    List<UserLike> selectUserLike(Integer userId);
     //喜欢操作
-    boolean  addUserLike(UserLike userLike);
+    int  addUserLike(UserLike userLike);
     //取消喜欢
-    boolean  deleUserLike(UserLike userLike);
+    int  deleUserLike(UserLike userLike);
 }

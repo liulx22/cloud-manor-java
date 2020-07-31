@@ -1,9 +1,10 @@
 package com.buba.cloud.cloudManor.mapper;
 
 import com.buba.cloud.cloudManor.pojo.OrderAgricultureVO;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface MyManorMapper {
    //获取我的关注数量
     int getAttentionNum(Integer userId);
