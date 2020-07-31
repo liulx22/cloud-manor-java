@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.CommentMapper">
+<!--添加评论-->
+  <insert id="addComment">
+   INSERT INTO comment (time, user_id,content,resource_id,pid) VALUES (now(), #{userId},#{content},#{resourceId},#{pid})
+  </insert>
+
+    <!--回显评论  List<Comment> huiXianComment(Integer resourceId);-->
+    <select id="huiXianComment" resultType="com.buba.cloud.cloudManor.pojo.Comment">
+     select image.img_dir imgDir,`user`.user_name userName,
+    `comment`.time,`comment`.resource_id resourceId,`comment`.user_id userId,`comment`.content,`comment`.pid
+     from comment LEFT JOIN  user  on `comment`.pid=`user`.id
+     LEFT JOIN image on image.id=`user`.image_id
+     LEFT JOIN resource on `user`.id=resource.uid
+     and resource.id=#{resourceId}
+    </select>
+</mapper>

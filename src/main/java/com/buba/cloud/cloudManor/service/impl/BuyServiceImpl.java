@@ -6,6 +6,7 @@ import com.buba.cloud.cloudManor.service.BuyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 /**
@@ -22,6 +23,7 @@ public class BuyServiceImpl implements BuyService {
 
     @Autowired
     private BuyMapper buyMapper;
+
     @Autowired
     private ResourceMapper resourceMapper;
     @Autowired

@@ -35,13 +35,13 @@ public class Resource {
     private Date publicDate;//发布时间
     private Integer imageId;
     private String imgDir;
+    private String imgName;//资源主图 名称
     //图片信息，视频信息关联图片表
     //浏览量，关注量，收藏量都用缓存实现
     private ResourceAnimalDetail resourceAnimalDetail;
     private ResourceGroundDetail resourceGroundDetail;
     private ResourceTreeDetail resourceTreeDetail;
     private Double money;//金额
-
-
-
+    private int masterId;//庄主id
+    private int masterType;//是否被承包 1表示承包中 0表示未承包
 }

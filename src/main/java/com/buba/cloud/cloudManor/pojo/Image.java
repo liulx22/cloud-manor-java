@@ -24,58 +24,10 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "JDBC")
     private Integer id;
+    private String typeCode;//关联Digital表中图片类型的code
     private String imgName;//图片名称
     private String imgDir;//存放路径
     private String userName;//中文名
-    private Integer typeCode;//关联Digital表中图片类型的code
-
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-
-    public Integer getTypeCode() {
-        return typeCode;
-    }
-
-    public void setTypeCode(Integer typeCode) {
-        this.typeCode = typeCode;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getImgName() {
-        return imgName;
-    }
-
-    public void setImgName(String imgName) {
-        this.imgName = imgName;
-    }
-
-    public String getImgDir() {
-        return imgDir;
-    }
-
-    public void setImgDir(String imgDir) {
-        this.imgDir = imgDir;
-    }
-
-
-
-
-
-
 
 
 }

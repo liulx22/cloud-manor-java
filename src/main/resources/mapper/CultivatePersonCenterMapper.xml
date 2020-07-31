@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.CultivatePersonCenterMapper">
+<!--通过user id获取养护人信息
+User pullMaintenanceInformation(Integer userId);-->
+    <select id="pullMaintenanceInformation" resultType="com.buba.cloud.cloudManor.pojo.User">
+
+          SELECT
+              us.*,image.img_name imgName
+          FROM
+              USER us,image
+          WHERE
+              us.imageId = image.id and image.type_code='userHead' AND us.id  = #{userId}
+
+    </select>
+<!--  通过user id查询对应资源数量
+Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
+    <select id="pullTheNumberOfResources" resultType="int">
+        SELECT
+           COUNT(*)
+        FROM
+            USER us,resource r
+        where
+            us.id  = #{userId}
+        and
+            us.id  = r.uid
+    </select>
+<!--    通过user id查询对应的余额
+    Double pullMaintenanceBalance(@Param("userId")Integer userId);-->
+    <select id="pullMaintenanceBalance" resultType="double">
+        SELECT
+            userinfo.recode_money
+        FROM
+            `user`,userinfo
+        WHERE
+            `user`.id=userinfo.user_id
+        and
+            `user`.id  = #{userId}
+    </select>
+<!--    通过user id查询发布的资源 (状态：已售出)
+    List<Resource> pullConservationResources(@Param("userId")Integer userId);-->
+    <select id="pullConservationResources" resultType="com.buba.cloud.cloudManor.pojo.Resource">
+        SELECT
+            resource.*
+            ,image.img_name imgName
+        FROM
+            image, resource,`order`
+        WHERE
+            resource.uid  = #{userId}
+        AND
+            resource.imageId=image.id
+        AND
+            image.type_code='resource'
+        AND
+            `order`.resourceId=resource.id
+    </select>
+    <!--    通过user id查询发布的资源 (状态：未售出)
+    List<Resource> pullConservatioNunsoldResources(@Param("userId")Integer userId);-->
+    <select id="pullConservatioNunsoldResources" resultType="com.buba.cloud.cloudManor.pojo.Resource">
+        SELECT
+            resource.*
+            ,image.img_name imgName
+        FROM
+            image, resource
+        WHERE
+            resource.uid  = #{userId}
+        AND resource.imageId=image.id
+        AND image.type_code='resource'
+        AND resource.id NOT in (SELECT `order`.resourceId FROM `order`,resource WHERE `order`.resourceId=resource.id)
+    </select>
+<!--    添加农事表
+    boolean batchCommitResources(@Param("userId")Integer userId,@Param("content") String content, @Param("resourceId")int resourceId);-->
+    <insert id="batchCommitResources" >
+        INSERT INTO
+            agriculture(agriculture.user_id,agriculture.resource_id,agriculture.`code`
+            ,agriculture.content,agriculture.put_time)
+         VALUES(#{userId},#{resourceId},'unfinished',#{content},NOW())
+  </insert>
+</mapper>

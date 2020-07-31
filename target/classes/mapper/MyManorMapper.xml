@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.MyManorMapper">
+
+    <!--
+    //获取我的关注数量
+    int getAttentionNum(Integer userId);
+    -->
+    <select id="getAttentionNum" resultType="int">
+            select count(*) from attention where from_user_id = #{userId}
+    </select>
+
+    <!--
+     //获取我的喜欢数量
+    int getMyLikeNum(Integer userId);
+    -->
+    <select id="getMyLikeNum" resultType="int">
+            select count(*) from user_like where from_user_id = #{userId}
+    </select>
+
+    <!--
+     //获取我的评论数量
+    int getMyCommentNum(Integer userId);
+    -->
+    <select id="getMyCommentNum" resultType="int">
+            select count(*) from comment where user_id=#{userId}
+    </select>
+    <!--
+    //获取我的订单数量
+    int getMyOrderNum(Integer userId);
+    -->
+    <select id="getMyOrderNum" resultType="int">
+            select count(*) from orders where user_id=#{userId}
+    </select>
+
+    <!--
+    //获取我的庄园 当前农事和视频
+    List<OrderAgricultureVO> getOrderAgriculture(Integer userId);
+    -->
+    <select id="getOrderAgriculture" resultType="com.buba.cloud.cloudManor.pojo.OrderAgricultureVO">
+            select #{userId} as userId,o.id orderId,r.id resourceId,a.content content,i.img_name imgName,
+             i.img_dir imgDir from
+            orders o,image i,img_rlation ir,resource r,agriculture a,agriculture_operation ao
+            where o.resource_id = r.id
+            and r.id = a.resource_id
+            and a.id = ao.aid
+            and ao.id=ir.other_id
+            and ir.image_id=i.id
+            and o.user_id=#{userId}
+    </select>
+
+</mapper>
