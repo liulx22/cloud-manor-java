@@ -1,5 +1,6 @@
 package com.buba.cloud.cloudManor.controller;
 
+import com.buba.cloud.cloudManor.pojo.IndexVO;
 import com.buba.cloud.cloudManor.pojo.OrderAgricultureVO;
 import com.buba.cloud.cloudManor.service.MyManorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,13 @@ public class MyManorController {
         return myManorService.getOrderAgriculture(userId);
     }
 
+    /**
+     * 获取首页视频地址和信息
+     * @return
+     */
+    @RequestMapping("getIndex")
+    public List<IndexVO> getIndex(){
 
+        return myManorService.getIndex();
+    }
 }
