@@ -53,6 +53,7 @@ public class LoginController {
             }else {
                 //手机号存入数据库
                 int i = loginService.addphone(phone);
+                user=loginService.find(phone);
                 if(i>0){
                     return user;
                 }
