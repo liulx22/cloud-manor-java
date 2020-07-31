@@ -3,12 +3,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.buba.cloud.cloudManor.mapper.LoginMapper">
     <!-- int addphone(String phone);-->
-    <insert id="addphone" useGeneratedKeys="true" keyProperty="id">
+    <insert id="addphone">
         insert into `user`(phone) values (#{phone})
     </insert>
     <!--boolean findphone(String phone);-->
-    <select id="findphone" resultType="com.buba.cloud.cloudManor.pojo.User">
-        select phone from `user` where phone=#{phone}
+    <select id="findphone" resultType="com.buba.cloud.cloudManor.pojo.User" parameterType="string">
+        select * from `user` where phone=#{phone}
     </select>
     <!--User find(String phone);-->
     <select id="find" resultType="com.buba.cloud.cloudManor.pojo.User">
