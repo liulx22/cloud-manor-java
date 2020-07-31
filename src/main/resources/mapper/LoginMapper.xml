@@ -10,4 +10,8 @@
     <select id="findphone" resultType="com.buba.cloud.cloudManor.pojo.User">
         select phone from `user` where phone=#{phone}
     </select>
+    <!--User find(String phone);-->
+    <select id="find" resultType="com.buba.cloud.cloudManor.pojo.User">
+        select * from `user` where phone=#{phone}
+    </select>
 </mapper>

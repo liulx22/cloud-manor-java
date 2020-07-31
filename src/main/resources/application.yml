@@ -1,6 +1,7 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    #cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver

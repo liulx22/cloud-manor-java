@@ -1,6 +1,7 @@
 package com.buba.cloud.cloudManor.service.impl;
 
 import com.buba.cloud.cloudManor.mapper.LoginMapper;
+import com.buba.cloud.cloudManor.pojo.User;
 import com.buba.cloud.cloudManor.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,5 +22,10 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public String findphone(String phone) {
         return loginMapper.findphone(phone);
+    }
+
+    @Override
+    public User find(String phone) {
+        return loginMapper.find(phone);
     }
 }
