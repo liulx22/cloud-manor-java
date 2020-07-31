@@ -27,6 +27,7 @@ public class ResourceAnimalDetail {
     private Integer age;//年龄
     private String vaccine;//是否打过疫苗
     private String geographicPosition;//位置
+
     private Integer id;
     private String title;//标题
     private String reTypeCode;//资源类型的英文名称

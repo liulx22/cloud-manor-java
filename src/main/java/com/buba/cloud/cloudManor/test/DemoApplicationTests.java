@@ -3,6 +3,7 @@ package com.buba.cloud.cloudManor.test;
 
 import com.buba.cloud.cloudManor.controller.BuyController;
 
+import com.buba.cloud.cloudManor.controller.CultivatePersonCenterController;
 import com.buba.cloud.cloudManor.pojo.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,8 +21,9 @@ import java.util.Map;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DemoApplicationTests {
-/*    @Autowired
-    private CultivatePersonCenterController buyController;*/
+    @Autowired
+
+    private CultivatePersonCenterController buyController;
 
 
     @Test
@@ -30,8 +32,8 @@ public class DemoApplicationTests {
      /*   User user = buyController.pullMaintenanceInformation(1);*/
   /*  boolean ooooo = buyController.batchCommitResources(1, ii, "ooooo");*/
 /*        List<com.buba.cloud.cloudManor.pojo.Resource> resources = buyController.pullConservationResources(1, 1);*/
-/*        Integer integer = buyController.pullTheNumberOfResources(1);*/
-     /*   System.out.println(integer);*/
+       Integer integer = buyController.pullTheNumberOfResources(1);
+       System.out.println(integer);
     }
 
 

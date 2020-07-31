@@ -39,4 +39,5 @@ public class ResourceTreeDetail {
     private Integer imageId;
     private String imgDir;
 
+
 }

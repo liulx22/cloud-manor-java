@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.ResourceMapper">
+<!--通过资源id获取养护人信息-->
+    <select id="selectLardResource" resultType="com.buba.cloud.cloudManor.pojo.Resource">
+               select  img_dir imgDir from  resource where id=1
+    </select>
+
+
+    <!--通过资源id获取庄主详情信息-->
+    <select id="selectResourceType" resultType="com.buba.cloud.cloudManor.pojo.Resource">
+       select  id,re_type_code reTypeCode,uid,img_dir imgDir,title,public_date publicDate  from  resource where id=#{resourceId}
+    </select>
+
+    <!--通过资源id获取庄主详情果树类-->
+    <select id="resourceFruiterMessage" resultType="com.buba.cloud.cloudManor.pojo.ResourceTreeDetail">
+    select a.id,a.image_id imageId,a.img_dir imgDir,a.uid,a.re_type_code reTypeCode,a.title,a.public_date publicDate,
+    b.resource_id resourceId,b.breed_name breedName,b.tree_age treeAge,b.yearly_output yearlyOutput,b.diameter,b.lease_time leaseTime,b.geographic_position  geographicPosition
+    from resource a,resourcetreedetail b
+    where a.id=b.resource_id
+    and  a.id=#{resourceId}
+    </select>
+
+
+    <!--通过资源id获取庄主详情畜牧类-->
+    <select id="resourceLivestockMessage"  resultType="com.buba.cloud.cloudManor.pojo.ResourceAnimalDetail">
+    select a.id,a.image_id imageId,a.img_dir imgDir,a.uid,a.re_type_code reTypeCode,a.title,a.public_date publicDate,
+    b.resource_id resourceId,b.breed_name breedName,b.weight,b.colour,b.age,b.vaccine ,b.geographicPosition
+    from resource a,resourceanimaldetail b
+    where a.id=b.resource_id
+    and  a.id=#{resourceId}
+    </select>
+
+    <!--通过资源id获取庄主详情土地类-->
+    <select id="resourcePlotMessage"  resultType="com.buba.cloud.cloudManor.pojo.ResourceGroundDetail">
+    select a.id,a.image_id imageId,a.img_dir imgDir,a.uid,a.re_type_code reTypeCode,a.title,a.public_date publicDate,
+    b.resource_id resourceId,b.plant_type plantType,b.yield,b.proportion,b.land_type landType,b.lease_time leaseTime ,b.geographic_position geographicPosition
+    from resource a,resourcegrounddetail b
+    where a.id=b.resource_id
+    and  a.id=#{resourceId}
+    </select>
+
+
+</mapper>

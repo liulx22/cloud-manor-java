@@ -2,6 +2,7 @@ package com.buba.cloud.cloudManor.mapper;
 
 import com.buba.cloud.cloudManor.pojo.ResourceGroundDetail;
 import com.buba.cloud.cloudManor.pojo.User;
+import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
 /**
@@ -13,5 +14,6 @@ import tk.mybatis.mapper.common.Mapper;
  * @Date: 2020/7/26 0026 12:56
  * @Version: 1.0
  */
+@Repository
 public interface ResourceGroundDetailMapper extends Mapper<ResourceGroundDetail> {
 }

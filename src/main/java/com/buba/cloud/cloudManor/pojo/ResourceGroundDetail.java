@@ -39,9 +39,5 @@ public class ResourceGroundDetail {
     private Integer imageId;
     private String imgDir;
 
-    public Integer getResourceId() {
-        return resourceId;
-    }
-
 
 }

@@ -41,19 +41,16 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
 <!--    通过user id查询发布的资源 (状态：已售出)
     List<Resource> pullConservationResources(@Param("userId")Integer userId);-->
     <select id="pullConservationResources" resultType="com.buba.cloud.cloudManor.pojo.Resource">
-        SELECT
+       SELECT
             resource.*
             ,image.img_name imgName
         FROM
-            image, resource,`order`
+            image, resource
         WHERE
             resource.uid  = #{userId}
-        AND
-            resource.imageId=image.id
-        AND
-            image.type_code='resource'
-        AND
-            `order`.resourceId=resource.id
+        AND resource.imageId=image.id
+        AND image.type_code='resource'
+        AND resource.masterType=1
     </select>
     <!--    通过user id查询发布的资源 (状态：未售出)
     List<Resource> pullConservatioNunsoldResources(@Param("userId")Integer userId);-->
@@ -67,7 +64,7 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
             resource.uid  = #{userId}
         AND resource.imageId=image.id
         AND image.type_code='resource'
-        AND resource.id NOT in (SELECT `order`.resourceId FROM `order`,resource WHERE `order`.resourceId=resource.id)
+        AND resource.masterType=2
     </select>
 <!--    添加农事表
     boolean batchCommitResources(@Param("userId")Integer userId,@Param("content") String content, @Param("resourceId")int resourceId);-->

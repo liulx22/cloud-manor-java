@@ -17,7 +17,8 @@ import java.util.Date;
  * @Date 2020/7/17 9:11
  * @Created by liulx
  */
-@Data
+
+
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 public class User {
@@ -49,6 +50,14 @@ public class User {
     private String imgDir;
 
     private String imgName;
+
+    public String getImgName() {
+        return imgName;
+    }
+
+    public void setImgName(String imgName) {
+        this.imgName = imgName;
+    }
 
     public Integer getId() {
         return id;

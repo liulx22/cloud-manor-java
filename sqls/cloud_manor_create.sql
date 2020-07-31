@@ -355,7 +355,7 @@ CREATE TABLE `user_info` (
 DROP TABLE IF EXISTS `user_like`;
 CREATE TABLE `user_like` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `from_user_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `resource_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -363,3 +363,4 @@ CREATE TABLE `user_like` (
 -- ----------------------------
 -- Records of user_like
 -- ----------------------------
+

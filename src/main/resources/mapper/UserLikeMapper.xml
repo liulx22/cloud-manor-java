@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.UserLikeMapper">
+    <!--/*我的喜欢*/
+      List<UserLike> selectUserLike(Integer userId);-->
+    <select id="selectUserLike" resultType="com.buba.cloud.cloudManor.pojo.UserLike" >
+     SELECT u.userName,r.title as title,a.`name` as addressName,i.imgName as imgName,i.imgDir as imgDir
+    FROM user_like ul, `user` u, image i ,address a ,resource r
+    WHERE ul.user_id=u.id and u.addressId=a.id and ul.resource_id=r.id and r.imageId=i.id
+    and ul.user_id=#{userId}
+    </select>
+   <!-- /*添加喜欢*/
+    boolean  addUserLike(UserLike userLike);-->
+    <insert id="addUserLike" parameterType="com.buba.cloud.cloudManor.pojo.UserLike" >
+        insert into user_like (user_id, resource_id)
+        values (#{userId}, #{resourceId})
+    </insert>
+    <!-- /*删除喜欢*/
+   boolean  deleUserLike(UserLike userLike);-->
+    <delete id="deleUserLike" parameterType="com.buba.cloud.cloudManor.pojo.UserLike" >
+        delete from user_like
+        where user_id=#{userId} and resource_id=#{resourceId}
+    </delete>
+</mapper>
