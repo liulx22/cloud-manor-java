@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.NurseVerificationMapper">
+   <!-- boolean VerificationInsert(Image image);-->
+	<insert id="VerificationInsert" useGeneratedKeys="true"  keyProperty="id">
+      insert into Image(typeCode,imgName,imgDir) values (#{typeCode},#{imgName},#{imgDir})
+	</insert>
+	<!--    boolean InsertImgRlation(@Param("image") Image image, @Param("userId") Integer userId);-->
+	<insert id="InsertImgRlation">
+		insert into ImgRlation(imageId,otherId) values (#{image.id},#{userId})
+	</insert>
+</mapper>
