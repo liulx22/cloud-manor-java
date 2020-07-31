@@ -48,6 +48,8 @@ public class User {
 
     private String imgDir;
 
+    private String imgName;
+
     public Integer getId() {
         return id;
     }
