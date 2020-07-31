@@ -24,7 +24,7 @@
 
 
     <!--通过资源id获取庄主详情畜牧类-->
-    <select id="resourceLivestockMessage"  resultType="com.example.spring_cloud_testzhuangyuan.pojo.ResourceAnimalDetail">
+    <select id="resourceLivestockMessage"  resultType="com.buba.cloud.cloudManor.pojo.ResourceAnimalDetail">
     select a.id,a.image_id imageId,a.img_dir imgDir,a.uid,a.re_type_code reTypeCode,a.title,a.public_date publicDate,
     b.resource_id resourceId,b.breed_name breedName,b.weight,b.colour,b.age,b.vaccine ,b.geographicPosition
     from resource a,resourceanimaldetail b
@@ -33,7 +33,7 @@
     </select>
 
     <!--通过资源id获取庄主详情土地类-->
-    <select id="resourcePlotMessage"  resultType="com.example.spring_cloud_testzhuangyuan.pojo.ResourceGroundDetail">
+    <select id="resourcePlotMessage"  resultType="com.buba.cloud.cloudManor.pojo.ResourceGroundDetail">
     select a.id,a.image_id imageId,a.img_dir imgDir,a.uid,a.re_type_code reTypeCode,a.title,a.public_date publicDate,
     b.resource_id resourceId,b.plant_type plantType,b.yield,b.proportion,b.land_type landType,b.lease_time leaseTime ,b.geographic_position geographicPosition
     from resource a,resourcegrounddetail b
