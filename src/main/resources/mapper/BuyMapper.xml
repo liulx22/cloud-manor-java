@@ -8,18 +8,20 @@
             us.userName,us.id
             ,(select image.img_dir from image where us.imageId = image.id)  as imgDir
         FROM
-            USER us,resource    where us.id  = resource.uid and resource.id  = #{resourceId}
+            USER us,resource
+            where us.id  = resource.uid
+            and
+            resource.id  = #{resourceId}
 
     </select>
-<!--  通过资源id查询资源信息  -->
+<!--  通过user id查询对应的资源数量  -->
     <select id="resourceMessage" resultType="com.buba.cloud.cloudManor.pojo.Resource">
         SELECT
-            resource.*,
-            image.img_dir AS imgDir
+           COUNT(*)
         FROM
-            resource
-            LEFT JOIN image ON resource.imageId = image.id
-        WHERE
-            resource.id = #{resourceId}
+            USER us,resource r
+        where  us.id  = 1
+        and
+        us.id  = r.uid
     </select>
 </mapper>
