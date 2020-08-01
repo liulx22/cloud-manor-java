@@ -39,8 +39,8 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
             `user`.id  = #{userId}
     </select>
 <!--    通过user id查询发布的资源 (状态：已售出)
-    List<Resource> pullConservationResources(@Param("userId")Integer userId);-->
-    <select id="pullConservationResources" resultType="com.buba.cloud.cloudManor.pojo.Resource">
+    List<CenterControllerResourceVo> pullConservationResources(@Param("userId")Integer userId);-->
+    <select id="pullConservationResources" resultType="com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo">
        SELECT
             resource.*
             ,image.img_name imgName
@@ -53,8 +53,8 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
         AND resource.masterType=1
     </select>
     <!--    通过user id查询发布的资源 (状态：未售出)
-    List<Resource> pullConservatioNunsoldResources(@Param("userId")Integer userId);-->
-    <select id="pullConservatioNunsoldResources" resultType="com.buba.cloud.cloudManor.pojo.Resource">
+    List<CenterControllerResourceVo> pullConservatioNunsoldResources(@Param("userId")Integer userId);-->
+    <select id="pullConservatioNunsoldResources" resultType="com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo">
         SELECT
             resource.*
             ,image.img_name imgName
@@ -74,4 +74,9 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
             ,agriculture.content,agriculture.put_time)
          VALUES(#{userId},#{resourceId},'unfinished',#{content},NOW())
   </insert>
+<!--    /*通过资源id删除资源*/
+    boolean deleteResources(@Param("resourceId")int i);-->
+    <delete id="deleteResources">
+        DELETE FROM resource WHERE resource.id=#{resourceId}
+    </delete>
 </mapper>
