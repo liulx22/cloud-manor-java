@@ -27,7 +27,7 @@
         insert into bank_card  values (null,#{bankName},#{bankType},#{cardNum},#{phone},#{userName})
     </insert>
     <insert id="addBandCardAndUser" useGeneratedKeys="true">
-        insert into band_card_and_user values (null,#{userId},#{id})
+        insert into band_card_and_user values (null,#{id},#{userId})
     </insert>
     <!--//本月未入账金额 userId=masterId
     ManorAccount findMoney0(Integer userId);-->
