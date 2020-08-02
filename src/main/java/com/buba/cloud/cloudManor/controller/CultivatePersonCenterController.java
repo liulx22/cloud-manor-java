@@ -1,5 +1,6 @@
 package com.buba.cloud.cloudManor.controller;
 
+import com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo;
 import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.pojo.User;
 import com.buba.cloud.cloudManor.service.CultivatePersonCenterService;
@@ -85,7 +86,7 @@ public class CultivatePersonCenterController {
      * @Date: 2020/7/28 0024 16:20
      */
     @RequestMapping("pullConservationResources")
-    public List<Resource> pullConservationResources(Integer userId,Integer type) {
+    public List<CenterControllerResourceVo> pullConservationResources(Integer userId, Integer type) {
         //判断资源id是否为空
         if (userId != null && type!=null) {
                 //判断 类型为1 已出售 类型为2 未出售
@@ -118,6 +119,29 @@ public class CultivatePersonCenterController {
 
                 }
                     return b;
+        }
+        //如果为空 返回null
+        return false;
+    }
+    /**
+     * 功能描述:通过资源id删除资源
+     *
+     * @Param: [userId]
+     * @Return: Integer
+     * @Author: zbw
+     * @Date: 2020/7/28 0024 16:20
+     */
+    @RequestMapping("deleteResources")
+    public boolean deleteResources(Integer userId,int[] resouceId) {
+        boolean b=true;
+        //判断资源id是否为空
+        if (userId != null && resouceId.length!=0) {
+            for(int i=0;i<resouceId.length;i++){
+                //删除资源
+                b = cultivatePersonCenterService.deleteResources(resouceId[i]);
+
+            }
+            return b;
         }
         //如果为空 返回null
         return false;
