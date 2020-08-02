@@ -89,12 +89,17 @@ public class CultivatePersonCenterController {
     public List<CenterControllerResourceVo> pullConservationResources(Integer userId, Integer type) {
         //判断资源id是否为空
         if (userId != null && type!=null) {
+            if (type==1||type==0){
                 //判断 类型为1 已出售 类型为2 未出售
-            if(type==1){
-                return cultivatePersonCenterService.pullConservationResources(userId);
-            }else if(type==2){
-                return cultivatePersonCenterService.pullConservatioNunsoldResources(userId);
+                if(type==1){
+                    return cultivatePersonCenterService.pullConservationResources(userId);
+                }else if(type==0){
+                    return cultivatePersonCenterService.pullConservatioNunsoldResources(userId);
+                }
+            }else{
+                return null;
             }
+
 
         }
         //如果为空 返回null
@@ -112,7 +117,7 @@ public class CultivatePersonCenterController {
     public boolean batchCommitResources(Integer userId,int[] resouceId,String content) {
         boolean b=false;
         //判断资源id是否为空
-        if (userId != null && resouceId.length!=0) {
+        if (userId != null && resouceId.length!=0 && content==null) {
                 for(int i=0;i<resouceId.length;i++){
                         //添加农事表
                     b = cultivatePersonCenterService.batchCommitResources(userId, content, resouceId[i]);

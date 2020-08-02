@@ -9,9 +9,9 @@ User pullMaintenanceInformation(Integer userId);-->
           SELECT
               us.*,image.img_name imgName
           FROM
-              USER us,image
+              `user` us,image
           WHERE
-              us.imageId = image.id and image.type_code='userHead' AND us.id  = #{userId}
+              us.image_id = image.id and image.code_type='user_head' AND us.id  = #{userId}
 
     </select>
 <!--  通过user id查询对应资源数量
@@ -20,7 +20,7 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
         SELECT
            COUNT(*)
         FROM
-            USER us,resource r
+            `user` us,resource r
         where
             us.id  = #{userId}
         and
@@ -45,26 +45,30 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
             resource.*
             ,image.img_name imgName
         FROM
-            image, resource
+            image, resource,img_rlation,digital
         WHERE
             resource.uid  = #{userId}
-        AND resource.imageId=image.id
-        AND image.type_code='resource'
-        AND resource.masterType=1
+				AND resource.id=img_rlation.other_id
+				AND img_rlation.image_id=image.id
+				AND img_rlation.type_code=(SELECT digital.id FROM digital WHERE digital.`name`='资源主图')
+				AND digital.`name`='资源主图'
+        AND resource.master_type=1
     </select>
     <!--    通过user id查询发布的资源 (状态：未售出)
     List<CenterControllerResourceVo> pullConservatioNunsoldResources(@Param("userId")Integer userId);-->
     <select id="pullConservatioNunsoldResources" resultType="com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo">
-        SELECT
+       SELECT
             resource.*
             ,image.img_name imgName
         FROM
-            image, resource
+            image, resource,img_rlation,digital
         WHERE
             resource.uid  = #{userId}
-        AND resource.imageId=image.id
-        AND image.type_code='resource'
-        AND resource.masterType=2
+				AND resource.id=img_rlation.other_id
+				AND img_rlation.image_id=image.id
+				AND img_rlation.type_code=(SELECT digital.id FROM digital WHERE digital.`name`='资源主图')
+				AND digital.`name`='资源主图'
+        AND resource.master_type=0
     </select>
 <!--    添加农事表
     boolean batchCommitResources(@Param("userId")Integer userId,@Param("content") String content, @Param("resourceId")int resourceId);-->

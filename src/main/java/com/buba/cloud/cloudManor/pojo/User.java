@@ -154,4 +154,23 @@ public class User {
     public void setImgDir(String imgDir) {
         this.imgDir = imgDir;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", accountName='" + accountName + '\'' +
+                ", password='" + password + '\'' +
+                ", userName='" + userName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", sex=" + sex +
+                ", birthday=" + birthday +
+                ", imageId=" + imageId +
+                ", addressId=" + addressId +
+                ", role=" + role +
+                ", imgDir='" + imgDir + '\'' +
+                ", imgName='" + imgName + '\'' +
+                '}';
+    }
 }

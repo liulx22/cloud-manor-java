@@ -35,7 +35,6 @@ public class Resource {
     private Date publicDate;//发布时间
     private Integer imageId;
     private String imgDir;
-    private String imgName;//资源主图 名称
     //图片信息，视频信息关联图片表
     //浏览量，关注量，收藏量都用缓存实现
     private ResourceAnimalDetail resourceAnimalDetail;
