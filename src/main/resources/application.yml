@@ -3,7 +3,7 @@ spring:
     url: jdbc:mysql://localhost:3306/cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
     #cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
     username: root
-    password: root
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     database: 1
