@@ -31,4 +31,6 @@ public interface ResourceMapper extends Mapper<Resource> {
     ResourceAnimalDetail resourceLivestockMessage(@Param("resourceId") Integer resourceId);
 
     ResourceGroundDetail resourcePlotMessage(@Param("resourceId") Integer resourceId);
+    //通过资源id查询该资源的价格
+    Double moneySafety(Integer resourceId);
 }
