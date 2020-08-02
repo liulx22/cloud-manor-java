@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.ReleaseResourceMapper">
+
+    <!--//添加resource
+    int resourceadd(ResourceVO resourceVO);-->
+    <insert id="resourceadd" useGeneratedKeys="true" keyProperty="id">
+        insert into resource(title,reTypeCode,uid,publicDate,money) values (#{title},#{reTypeCode},#{uid},now(),#{money})
+    </insert>
+    
+    <!-- //添加林业表
+    boolean resourceTreeadd(ResourceVO resourceVO);
+    -->
+    <insert id="resourceTreeadd">
+        insert into resourcetreedetail values (#{id},#{breedName},#{treeAge},#{yearlyOutput},#{diameter},#{leaseTime},#{geographicPosition})
+    </insert>
+    <!-- //添加畜牧业表
+    boolean resourceAnimaladd(ResourceVO resourceVO);-->
+    <insert id="resourceAnimaladd">
+        insert into resourceanimaldetail values (#{id},#{breedName},#{weight},#{colour},#{age},#{vaccine},#{geographicPosition})
+    </insert>
+    <!--//添加地块表
+    boolean resourceGroundadd(ResourceVO resourceVO);-->
+    <insert id="resourceGroundadd">
+        insert into resourcegrounddetail values (#{id},#{plantType},#{yield},#{proportion},#{landType},#{leaseTime},#{geographicPosition})
+    </insert>
+</mapper>

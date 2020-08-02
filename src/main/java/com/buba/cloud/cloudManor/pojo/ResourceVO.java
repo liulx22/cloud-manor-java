@@ -16,6 +16,7 @@ public class ResourceVO {
     private Integer id;
     /*resource表字段*/
     private String title;//标题
+    private Integer uid;//用户id
     private String reTypeCode;//资源类型的英文名称
     private Double money;//金额
     @DateTimeFormat(pattern ="yyyy-MM-dd")
@@ -33,7 +34,9 @@ public class ResourceVO {
     private String yield;//产量
     private String proportion;//面积
     private String landType;//土地类型
-    private Integer leaseTime;//承包时间
+    @DateTimeFormat(pattern ="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
+    private Date leaseTime;//承包时间
     /*tree表字段*/
     private Integer treeAge;//树龄
     private String yearlyOutput;//年产量
