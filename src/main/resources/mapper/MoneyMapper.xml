@@ -24,7 +24,7 @@
 
     boolean addBandCardAndUser(Integer id);-->
     <insert id="addBankCard" useGeneratedKeys="true" keyProperty="id">
-        insert into bank_card  values (null,#{bankName},#{cardNum},#{userName},#{phone},#{bankType})
+        insert into bank_card  values (null,#{bankName},#{bankType},#{cardNum},#{phone},#{userName})
     </insert>
     <insert id="addBandCardAndUser" useGeneratedKeys="true">
         insert into band_card_and_user values (null,#{userId},#{id})
@@ -93,7 +93,7 @@
     //修改UserInfo个人余额信息
     boolean updateUserInfo(@Param("userId")Integer userId, @Param("remaindMoney")Double remaindMoney);-->
     <insert id="addMasterAccount" useGeneratedKeys="true">
-       insert into master_account  values (null,#{userId},now(),#{money},#{remaindMoney},null)
+       insert into master_account  values (null,'银行卡',#{userId},#{money},#{remaindMoney},now())
     </insert>
 
     <update id="updateUserInfo">
