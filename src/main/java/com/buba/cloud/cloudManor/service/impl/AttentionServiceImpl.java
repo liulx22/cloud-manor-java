@@ -14,17 +14,17 @@ public class AttentionServiceImpl implements AttentionService {
     private AttentionMapper attentionMapper;
 
     @Override
-    public List<UserAttentionVo> SelAttrntion() {
-        return attentionMapper.SelAttrntion();
+    public List<UserAttentionVo> SelAttrntion(Integer id) {
+        return attentionMapper.SelAttrntion(id);
     }
 
     @Override
-    public boolean Attrntion(Integer userId) {
-        return attentionMapper.Attrntion(userId);
+    public boolean Attrntion(Integer userId,Integer userId2) {
+        return attentionMapper.Attrntion(userId,userId2);
     }
 
     @Override
-    public boolean CancelTheAttention(Integer id) {
-        return attentionMapper.CancelTheAttention(id);
+    public boolean CancelTheAttention(Integer id,Integer userId2) {
+        return attentionMapper.CancelTheAttention(id,userId2);
     }
 }

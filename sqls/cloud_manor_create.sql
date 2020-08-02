@@ -205,6 +205,7 @@ CREATE TABLE `image` (
 DROP TABLE IF EXISTS `img_rlation`;
 CREATE TABLE `img_rlation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_code` int(11) DEFAULT NULL,
   `image_id` int(11) DEFAULT NULL,
   `other_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
