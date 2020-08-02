@@ -1,11 +1,14 @@
 package com.buba.cloud.cloudManor.pojo;
 
+import lombok.Data;
+
 /**
  * @Classname ImgRlation
  * @Description 图片和其它表的关联表
  * @Date 2020/7/17 9:32
  * @Created by liulx
  */
+@Data
 public class ImgRlation {
     private Integer id;
     private Integer imageId;//关联Image表的id

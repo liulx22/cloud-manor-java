@@ -7,4 +7,5 @@ package com.buba.cloud.cloudManor.pojo;
  * @Created by liulx
  */
 public class TradeRecodr {
+
 }

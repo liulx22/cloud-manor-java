@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.LoginMapper">
+    <!-- int addphone(String phone);-->
+    <insert id="addphone">
+        insert into `user`(phone) values (#{phone})
+    </insert>
+    <!--boolean findphone(String phone);-->
+    <select id="findphone" resultType="com.buba.cloud.cloudManor.pojo.User" parameterType="string">
+        select * from `user` where phone=#{phone}
+    </select>
+    <!--User find(String phone);-->
+    <select id="find" resultType="com.buba.cloud.cloudManor.pojo.User">
+        select * from `user` where phone=#{phone}
+    </select>
+</mapper>

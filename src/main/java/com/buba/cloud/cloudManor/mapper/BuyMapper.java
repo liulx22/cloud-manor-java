@@ -1,7 +1,9 @@
 package com.buba.cloud.cloudManor.mapper;
 
+import com.buba.cloud.cloudManor.pojo.Order;
 import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.pojo.User;
+import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
 /**
@@ -13,9 +15,14 @@ import tk.mybatis.mapper.common.Mapper;
  * @Date: 2020/7/24 0024 16:17
  * @Version: 1.0
  */
-public interface BuyMapper extends Mapper<User>{
+@Repository
+public interface BuyMapper extends Mapper<User> {
     //通过资源id获取养护人信息
     User obtainMaintenancePeopleMessage(Integer resourceId);
+
     //通过资源id查询资源信息
     Resource resourceMessage(Integer resourceId);
+
+    //录入订单信息
+    Boolean addOrder(Order order);
 }

@@ -1,7 +1,10 @@
 package com.buba.cloud.cloudManor.mapper;
 
 import com.buba.cloud.cloudManor.pojo.ResourceAnimalDetail;
+import com.buba.cloud.cloudManor.pojo.ResourceTreeDetail;
 import com.buba.cloud.cloudManor.pojo.ResourceType;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
 /**
@@ -13,5 +16,7 @@ import tk.mybatis.mapper.common.Mapper;
  * @Date: 2020/7/26 0026 13:11
  * @Version: 1.0
  */
-public interface ResourceTypeMapper  extends Mapper<ResourceType> {
+@Repository
+public interface ResourceTypeMapper {
+
 }

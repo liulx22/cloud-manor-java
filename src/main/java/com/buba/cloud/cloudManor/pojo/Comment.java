@@ -1,5 +1,7 @@
 package com.buba.cloud.cloudManor.pojo;
 
+import lombok.Data;
+
 import java.util.Date;
 
 /**
@@ -8,6 +10,7 @@ import java.util.Date;
  * @Date 2020/7/17 10:02
  * @Created by liulx
  */
+@Data
 public class Comment {
     private Integer id;
     private Date time;//评论的时间
@@ -16,4 +19,10 @@ public class Comment {
     private Integer resourceId;//关联资源Id
     private Integer pid;//父评论id
 
+    //展示查询时需要，不需要建表创建字段
+    private String userName;
+    private String imagetu;
+    private String imgName;
+    private String imgDir;
+    private String commentId;
 }

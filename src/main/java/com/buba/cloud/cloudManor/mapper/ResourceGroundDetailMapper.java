@@ -2,6 +2,8 @@ package com.buba.cloud.cloudManor.mapper;
 
 import com.buba.cloud.cloudManor.pojo.ResourceGroundDetail;
 import com.buba.cloud.cloudManor.pojo.User;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
 /**
@@ -13,5 +15,9 @@ import tk.mybatis.mapper.common.Mapper;
  * @Date: 2020/7/26 0026 12:56
  * @Version: 1.0
  */
-public interface ResourceGroundDetailMapper extends Mapper<ResourceGroundDetail> {
+@Repository
+public interface ResourceGroundDetailMapper {
+    //通过资源id查询地块具体信息
+    @Select("select * from resourcegrounddetail where resource_id = #{resourceId}")
+    ResourceGroundDetail resourcePlotMessage(Integer resourceId);
 }
