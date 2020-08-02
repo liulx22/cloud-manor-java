@@ -1,5 +1,6 @@
 package com.buba.cloud.cloudManor.controller;
 
+import com.buba.cloud.cloudManor.pojo.Order;
 import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.pojo.ResourceType;
 import com.buba.cloud.cloudManor.pojo.User;
@@ -9,6 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -43,8 +48,10 @@ public class BuyController {
         //如果为空 返回null
         return null;
     }
+
     /**
      * 功能描述:通过资源id查询资源信息，以及该资源的具体信息
+     *
      * @Param: [resourceId]
      * @Return: com.buba.cloud.cloudManor.pojo.Resource
      * @Author: ggx
@@ -57,7 +64,7 @@ public class BuyController {
             //获取资源信息
             Resource resource = buyService.resourceMessage(resourceId);
             //如果资源信息不为null
-            if(resource!=null){
+            if (resource != null) {
                 //获取资源类型
                 String resourceType = resource.getReTypeCode();
                 //如果资源类型不为null
@@ -85,4 +92,42 @@ public class BuyController {
         return null;
     }
 
+    /**
+     * 功能描述:录入订单信息
+     *
+     * @Param: [userId, resourceId, desc]
+     * @Return: java.lang.Boolean
+     * @Author: ggx
+     * @Date: 2020/7/31 0031 18:58
+     */
+    @RequestMapping("addOrder")
+    public Boolean addOrder(Integer userId, Integer resourceId, String desc) {
+        if (userId != null && resourceId != null) {
+            Integer orderRunningNum = null;
+            Format threeNum = new DecimalFormat("000");
+            Order order = new Order();
+            //获取当前时间的yyyyMMdd形式 用于生成订单编号
+            SimpleDateFormat sim = new SimpleDateFormat("yyyyMMdd");
+            Integer datenum = Integer.parseInt(sim.format(new Date()));
+            //去数据库查询该订单为今日的第几份订单 用于生成订单编号
+            orderRunningNum = buyService.orderRunningNum();
+            if (orderRunningNum != null) {
+                String format = threeNum.format(orderRunningNum + 1);
+                order.setOrderNo(datenum + format);
+            } else {
+                String format = threeNum.format(1);
+                order.setOrderNo(datenum + format);
+            }
+            //通过资源id去查询该商品的金额，为了确保前端篡改金额
+            Double money = buyService.moneySafety(resourceId);
+            order.setMoney(money);
+            order.setResourceId(resourceId);
+            order.setUserId(userId);
+            order.setDesc(desc);
+            order.setDigitalCode("待支付");
+            //进行订单录入
+            return buyService.addOrder(order);
+        }
+        return false;
+    }
 }

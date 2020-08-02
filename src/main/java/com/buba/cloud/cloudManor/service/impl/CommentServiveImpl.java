@@ -21,4 +21,23 @@ public class CommentServiveImpl implements CommentServive {
     public List<Comment> huiXianComment(Integer userid) {
         return commentMapper.huiXianComment( userid);
     }
+
+    @Override
+    public List<Comment> getAllWo(int id) {
+        List<Comment> list = commentMapper.getAllWo(id);
+        return list;
+    }
+
+    @Override
+    public List<Comment> getAll(int id) {
+        List<Comment> list = commentMapper.getAll(id);
+        return list;
+    }
+
+
+
+    @Override
+    public int delete(int id) {
+        return commentMapper.delete(id);
+    }
 }

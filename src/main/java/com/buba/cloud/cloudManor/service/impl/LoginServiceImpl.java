@@ -20,8 +20,9 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public String findphone(String phone) {
-        return loginMapper.findphone(phone);
+    public User findphone(String phone) {
+        User u=loginMapper.findphone(phone);
+        return u;
     }
 
     @Override

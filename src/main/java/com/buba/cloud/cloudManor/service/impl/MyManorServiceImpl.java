@@ -1,6 +1,7 @@
 package com.buba.cloud.cloudManor.service.impl;
 
 import com.buba.cloud.cloudManor.mapper.MyManorMapper;
+import com.buba.cloud.cloudManor.pojo.IndexVO;
 import com.buba.cloud.cloudManor.pojo.OrderAgricultureVO;
 import com.buba.cloud.cloudManor.service.MyManorService;
 import com.buba.cloud.cloudManor.utils.RedisUtils;
@@ -53,4 +54,12 @@ public class MyManorServiceImpl implements MyManorService {
         return myManorMapper.getOrderAgriculture(userId);
     }
 
+    /**
+     * 获取首页视频地址和信息
+     * @return
+     */
+    @Override
+    public List<IndexVO> getIndex() {
+        return myManorMapper.getIndex();
+    }
 }
