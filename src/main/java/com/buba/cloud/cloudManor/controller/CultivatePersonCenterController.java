@@ -117,7 +117,7 @@ public class CultivatePersonCenterController {
     public boolean batchCommitResources(Integer userId,int[] resouceId,String content) {
         boolean b=false;
         //判断资源id是否为空
-        if (userId != null && resouceId.length!=0 && content==null) {
+        if (userId != null && resouceId.length!=0 && content!=null) {
                 for(int i=0;i<resouceId.length;i++){
                         //添加农事表
                     b = cultivatePersonCenterService.batchCommitResources(userId, content, resouceId[i]);
