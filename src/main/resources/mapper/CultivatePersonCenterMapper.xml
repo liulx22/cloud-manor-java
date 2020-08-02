@@ -30,11 +30,11 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
     Double pullMaintenanceBalance(@Param("userId")Integer userId);-->
     <select id="pullMaintenanceBalance" resultType="double">
         SELECT
-            userinfo.recode_money
+            user_info.recode_money
         FROM
-            `user`,userinfo
+            `user`,user_info
         WHERE
-            `user`.id=userinfo.user_id
+            `user`.id=user_info.user_id
         and
             `user`.id  = #{userId}
     </select>
