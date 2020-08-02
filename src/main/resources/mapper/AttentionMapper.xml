@@ -3,24 +3,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.buba.cloud.cloudManor.mapper.AttentionMapper">
     <select id="SelAttrntion" resultType="com.buba.cloud.cloudManor.pojo.UserAttentionVo">
-     SELECT
+      SELECT
 	u.id  userId,
 	i.img_name,
 	i.img_dir ,
 	u.user_name,
 	u.phone,
-	u.email,
-	u.sex
+	u.email
 FROM
 	`user` u,
 	image i,
-	attention a,
-	digital d
+	attention a
+
 WHERE
 	u.id = a.from_user_id
 	AND u.image_id = i.id
-	and d.id=i.id
-	and d.type='image'
 	and u.id=#{id}
     </select>
     <delete id="CancelTheAttention">
