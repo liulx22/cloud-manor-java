@@ -64,11 +64,11 @@ public class ReleaseResourceServiceimpl implements ReleaseResourceService {
         if (i>0){
             //上传图片中间表
             int typeCode=0;
-            if (image.getTypeCode().equals("resource_vedio")){
+            if (image.getCodeType().equals("resource_vedio")){
                 typeCode=3;
-            }else if (image.getTypeCode().equals("resource_detail")){
+            }else if (image.getCodeType().equals("resource_detail")){
                 typeCode=2;
-            }else if (image.getTypeCode().equals("resource_main")){
+            }else if (image.getCodeType().equals("resource_main")){
                 typeCode=1;
             }
             if (typeCode!=0){
