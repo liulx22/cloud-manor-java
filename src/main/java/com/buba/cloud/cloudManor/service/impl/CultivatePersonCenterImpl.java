@@ -1,6 +1,7 @@
 package com.buba.cloud.cloudManor.service.impl;
 
 import com.buba.cloud.cloudManor.mapper.CultivatePersonCenterMapper;
+import com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo;
 import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.pojo.User;
 import com.buba.cloud.cloudManor.service.CultivatePersonCenterService;
@@ -37,13 +38,13 @@ public class CultivatePersonCenterImpl implements CultivatePersonCenterService {
     }
     /*通过user id查询发布的资源 (状态：已售出)*/
     @Override
-    public List<Resource> pullConservationResources(Integer userId) {
-        return cultivatePersonCenterMapper.pullConservationResources( userId);
+    public List<CenterControllerResourceVo> pullConservationResources(Integer userId) {
+        return cultivatePersonCenterMapper.pullConservationResources(userId);
     }
     /*通过user id查询发布的资源 (状态：未售出)*/
     @Override
-    public List<Resource> pullConservatioNunsoldResources(Integer userId) {
-        return cultivatePersonCenterMapper.pullConservatioNunsoldResources( userId);
+    public List<CenterControllerResourceVo> pullConservatioNunsoldResources(Integer userId) {
+        return cultivatePersonCenterMapper.pullConservatioNunsoldResources(userId);
     }
     //添加农事表
     @Override
