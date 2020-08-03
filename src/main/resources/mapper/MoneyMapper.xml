@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.MoneyMapper">
+   <!-- 查询养护人金钱
+    UserInfo findUserInfo(Integer userId);-->
+    <select id="findUserInfo" resultType="com.buba.cloud.cloudManor.pojo.UserInfo">
+        select * from user_info where user_id=#{userId}
+    </select>
+<!--//查询银行卡  根据BandCardAndUser关联表的cardId，查询BankCard对应的银行卡信息
+    List<BankCard> findBankCard(Integer userId);-->
+    <select id="findBankCard" resultType="com.buba.cloud.cloudManor.pojo.BankCard">
+        SELECT
+            bc.*
+        FROM
+            bank_card bc,
+            band_card_and_user ba
+        WHERE
+            bc.id = ba.card_id
+        AND ba.user_id = #{userId}
+    </select>
+    <!--//添加银行卡信息 添加BankCard详细信息同时添加BandCardAndUser关联信息
+    Integer addBankCard(BankCard bankCard);
+
+    boolean addBandCardAndUser(Integer id);-->
+    <insert id="addBankCard" useGeneratedKeys="true" keyProperty="id">
+        insert into bank_card  values (null,#{bankName},#{bankType},#{cardNum},#{phone},#{userName})
+    </insert>
+    <insert id="addBandCardAndUser" useGeneratedKeys="true">
+        insert into band_card_and_user values (null,#{id},#{userId})
+    </insert>
+    <!--//本月未入账金额 userId=masterId
+    ManorAccount findMoney0(Integer userId);-->
+    <select id="findMoney0" resultType="String">
+      select  sum(money) monye from manor_account WHERE MONTH(record_time)=MONTH(NOW()) and tag=0 and master_id=#{userId}
+    </select>
+    <!--//本月已入账金额 userId=masterId
+    ManorAccount findMoney1(Integer userId);-->
+    <select id="findMoney1" resultType="String">
+    select sum(money) monye from manor_account WHERE MONTH(record_time)=MONTH(NOW()) and tag=1 and master_id=#{userId}
+    </select>
+    <!--//本月提现金额userId=masterId
+    MasterAccount findMasterAccount(Integer userId);-->
+    <select id="findMasterAccount" resultType="String">
+        select sum(money) monye from master_account  WHERE MONTH(time)=MONTH(NOW())  and master_id=#{userId}
+    </select>
+
+<!--List<ManorAccount> findRecordMoney(@Param("userId") Integer userId,@Param("n")  String n,@Param("y")  String y);
+
+    List<ManorAccount> findNoneRecordMoney(@Param("userId") Integer userId,@Param("n")  String n,@Param("y")  String y);
+
+    List<MasterAccount> findRemaindMoney(@Param("userId") Integer userId,@Param("n")  String n,@Param("y")  String y);-->
+    <select id="findRecordMoney" resultType="com.buba.cloud.cloudManor.pojo.ManorAccount">
+        SELECT * from manor_account where master_id=#{userId}
+        <if test="y==0 and n==0">
+            and  MONTH(record_time)=MONTH(NOW())
+        </if>
+        <if test="n!=0 and n!=''">
+          and  YEAR(record_time)=#{n}
+        </if>
+        <if test="y!=0 and y!=''">
+          and  MONTH(record_time)=#{y}
+        </if>
+        and tag=1
+    </select>
+    <select id="findNoneRecordMoney" resultType="com.buba.cloud.cloudManor.pojo.ManorAccount">
+        SELECT * from manor_account where master_id=#{userId}
+        <if test="y==0 and n==0">
+            and  MONTH(record_time)=MONTH(NOW())
+        </if>
+        <if test="n!=0 and n!=''">
+            and  YEAR(record_time)=#{n}
+        </if>
+        <if test="y!=0 and y!=''">
+            and  MONTH(record_time)=#{y}
+        </if>
+        and tag=0
+    </select>
+    <select id="findRemaindMoney" resultType="com.buba.cloud.cloudManor.pojo.MasterAccount">
+        SELECT * from master_account where master_id=#{userId}
+        <if test="y==0 and n==0">
+            and  MONTH(time)=MONTH(NOW())
+        </if>
+        <if test="n!=0 and n!=''">
+            and  YEAR(time)=#{n}
+        </if>
+        <if test="y!=0 and y!=''">
+            and  MONTH(time)=#{y}
+        </if>
+    </select>
+    <!--//添加提现账单MasterAccount
+    boolean addMasterAccount(@Param("userId")Integer userId, @Param("money")Double money, @Param("remaindMoney")Double remaindMoney);
+    //修改UserInfo个人余额信息
+    boolean updateUserInfo(@Param("userId")Integer userId, @Param("remaindMoney")Double remaindMoney);-->
+    <insert id="addMasterAccount" useGeneratedKeys="true">
+       insert into master_account  values (null,'银行卡',#{userId},#{money},#{remaindMoney},now())
+    </insert>
+
+    <update id="updateUserInfo">
+       UPDATE user_info set recode_money=#{remaindMoney} where user_id=#{userId}
+    </update>
+</mapper>

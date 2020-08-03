@@ -1,11 +1,18 @@
 package com.buba.cloud.cloudManor.pojo;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
 /**
  * @Classname UserInfo
  * @Description 用户冷数据信息
  * @Date 2020/7/17 9:20
  * @Created by liulx
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 public class UserInfo {
     private Integer userId;//关联User表的id字段,该表的主键
     //身份证信息

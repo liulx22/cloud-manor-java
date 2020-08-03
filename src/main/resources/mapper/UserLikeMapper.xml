@@ -5,10 +5,24 @@
     <!--/*我的喜欢*/
       List<UserLike> selectUserLike(Integer userId);-->
     <select id="selectUserLike" resultType="com.buba.cloud.cloudManor.pojo.UserLike" >
-     SELECT u.userName,r.title as title,a.`name` as addressName,i.imgName as imgName,i.imgDir as imgDir
-    FROM user_like ul, `user` u, image i ,address a ,resource r
-    WHERE ul.user_id=u.id and u.addressId=a.id and ul.resource_id=r.id and r.imageId=i.id
-    and ul.user_id=#{userId}
+    SELECT
+	u.user_name,
+	r.title AS title,
+	a.`name` AS addressName,
+	i.img_name AS imgName,
+	i.img_dir AS imgDir
+FROM
+	user_like ul,
+	`user` u,
+	image i,
+	address a,
+	resource r
+WHERE
+	ul.user_id = u.id
+AND u.address_id = a.id
+AND ul.resource_id = r.id
+AND r.image_id = i.id
+AND ul.user_id = #{userId}
     </select>
    <!-- /*添加喜欢*/
     boolean  addUserLike(UserLike userLike);-->
