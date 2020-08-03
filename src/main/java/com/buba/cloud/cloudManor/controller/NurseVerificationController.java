@@ -63,20 +63,20 @@ public class NurseVerificationController {
         Image image=new Image();
         image.setImgName(f+suffix);
         image.setImgDir(a);
-        image.setTypeCode("身份证");
+        image.setTypeCode("user_identity");
 
         //添加养护人信息
         boolean b=nurseVerificationService.VerificationInsert(image,userId);
         Image image1=new Image();
         image1.setImgName(f+suffix);
         image1.setImgDir(a);
-        image1.setTypeCode("身份证");
+        image1.setTypeCode("user_identity");
         boolean b1=nurseVerificationService.VerificationInsert(image1,userId);
 
         Image image2=new Image();
         image2.setImgName(f2+suffix);
         image2.setImgDir(a);
-        image2.setTypeCode("身份证");
+        image2.setTypeCode("user_identity");
         boolean b2=nurseVerificationService.VerificationInsert(image2,userId);
         if(b==true|b1==true|b2==true){
             return true;

@@ -9,6 +9,14 @@ spring:
     database: 1
     host: 47.94.236.46
     port: 6379
+  http:
+    multipart:
+      maxFileSize: 5MB
+      maxRequestSize: 30MB
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.buba.cloud.cloudManor.pojo

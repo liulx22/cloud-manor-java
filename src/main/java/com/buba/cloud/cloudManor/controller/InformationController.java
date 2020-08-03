@@ -3,9 +3,7 @@ package com.buba.cloud.cloudManor.controller;
 import com.buba.cloud.cloudManor.pojo.User;
 import com.buba.cloud.cloudManor.service.InformationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -23,9 +21,8 @@ public class InformationController {
 
     //回显用户信息
     @RequestMapping("/echoUserInfo")
-    public User echoUserInfo(Integer userId) {
+    public User echoUserInfo(int userId) {
         User userInfo = informationService.echoUserInfo(userId);
-        System.out.println(userInfo);
         return userInfo;
     }
     //修改用户信息
