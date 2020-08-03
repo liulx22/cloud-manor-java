@@ -14,5 +14,4 @@ public class ImgRlation {
     private String typeCode;//关联image表的typeCode
     private Integer imageId;//关联Image表的id
     private Integer otherId;//其它表的id
-    private Integer typeCode;
 }
