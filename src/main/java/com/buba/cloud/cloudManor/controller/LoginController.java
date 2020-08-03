@@ -42,21 +42,21 @@ public class LoginController {
     //登陆
     @RequestMapping("login")
     public User login(String phone,String yzm){
-        String code=(String)redisUtils.get("code");
-        System.out.println(yzm);
+        String code=String.valueOf(redisUtils.get("code"));
         User user;
-        if(yzm==code){
-            String b=loginService.findphone(phone);
-            user=loginService.find(phone);
-            if(b!=""){
-                return user;
-            }else {
+        if(yzm.equals(code)){
+           User u= loginService.findphone(phone);
+            System.out.println("123132132132"+u);
+            if(u==null){
                 //手机号存入数据库
                 int i = loginService.addphone(phone);
                 user=loginService.find(phone);
                 if(i>0){
                     return user;
                 }
+            }else {
+                user=loginService.find(phone);
+                return user;
             }
             return user;
         }else {

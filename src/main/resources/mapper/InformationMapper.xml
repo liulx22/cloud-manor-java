@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.buba.cloud.cloudManor.mapper.InformationMapper">
+    <!--//个人信息查询  User echoUserInfo(int userId);-->
+    <select id="echoUserInfo" resultType="User">
+        select * from user where id=#{userId}
+    </select>
+    <!--//修改个人信息  boolean editUserInfo(User user);-->
+    <update id="editUserInfo">
+        update user set user_name=#{userName},phone=#{phone},
+        email=#{email},sex=#{sex},
+        birthday=#{birthday},address_id=#{addressId}
+        where id=#{id}
+    </update>
+</mapper>

@@ -205,6 +205,7 @@ CREATE TABLE `image` (
 DROP TABLE IF EXISTS `img_rlation`;
 CREATE TABLE `img_rlation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_code` int(11) DEFAULT NULL,
   `image_id` int(11) DEFAULT NULL,
   `other_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -364,3 +365,23 @@ CREATE TABLE `user_like` (
 -- Records of user_like
 -- ----------------------------
 
+
+-- ----------------------------
+-- Table structure for orders
+-- ----------------------------
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_no` bigint(255) NULL DEFAULT NULL COMMENT '订单编号',
+  `order_time` datetime(0) NULL DEFAULT NULL COMMENT '下单时间',
+  `user_id` int(11) NULL DEFAULT NULL COMMENT '下单人id',
+  `resource_id` int(11) NULL DEFAULT NULL COMMENT '资源id',
+  `desc` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注留言信息',
+  `money` double(10, 2) NULL DEFAULT NULL COMMENT '金额',
+  `digital_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '订单状态  （待支付，已支付，已完成，已取消，未退款，）',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of orders
+-- ----------------------------

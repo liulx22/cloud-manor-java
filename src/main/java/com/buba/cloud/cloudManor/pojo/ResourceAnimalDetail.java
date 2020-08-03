@@ -28,12 +28,13 @@ public class ResourceAnimalDetail {
     private String vaccine;//是否打过疫苗
     private String geographicPosition;//位置
 
+
     private Integer id;
     private String title;//标题
     private String reTypeCode;//资源类型的英文名称
     private Integer uid;//发布资源用户id
-    @DateTimeFormat(pattern ="yyyy-MM-dd")
-    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date publicDate;//发布时间
     private Integer imageId;
     private String imgDir;

@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface AttentionService {
     //查询关注人
-    List<UserAttentionVo> SelAttrntion();
+    List<UserAttentionVo> SelAttrntion(Integer id);
     //关注
-    boolean Attrntion(Integer userId);
+    boolean Attrntion(Integer userId,Integer userId2);
     //取消关注
-    boolean CancelTheAttention(Integer userId);
+    boolean CancelTheAttention(Integer userId,Integer userId2);
 }

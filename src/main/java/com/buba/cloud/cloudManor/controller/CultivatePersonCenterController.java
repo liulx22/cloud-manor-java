@@ -1,5 +1,6 @@
 package com.buba.cloud.cloudManor.controller;
 
+import com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo;
 import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.pojo.User;
 import com.buba.cloud.cloudManor.service.CultivatePersonCenterService;
@@ -85,15 +86,20 @@ public class CultivatePersonCenterController {
      * @Date: 2020/7/28 0024 16:20
      */
     @RequestMapping("pullConservationResources")
-    public List<Resource> pullConservationResources(Integer userId,Integer type) {
+    public List<CenterControllerResourceVo> pullConservationResources(Integer userId, Integer type) {
         //判断资源id是否为空
         if (userId != null && type!=null) {
+            if (type==1||type==0){
                 //判断 类型为1 已出售 类型为2 未出售
-            if(type==1){
-                return cultivatePersonCenterService.pullConservationResources(userId);
-            }else if(type==2){
-                return cultivatePersonCenterService.pullConservatioNunsoldResources(userId);
+                if(type==1){
+                    return cultivatePersonCenterService.pullConservationResources(userId);
+                }else if(type==0){
+                    return cultivatePersonCenterService.pullConservatioNunsoldResources(userId);
+                }
+            }else{
+                return null;
             }
+
 
         }
         //如果为空 返回null
@@ -111,7 +117,7 @@ public class CultivatePersonCenterController {
     public boolean batchCommitResources(Integer userId,int[] resouceId,String content) {
         boolean b=false;
         //判断资源id是否为空
-        if (userId != null && resouceId.length!=0) {
+        if (userId != null && resouceId.length!=0 && content!=null) {
                 for(int i=0;i<resouceId.length;i++){
                         //添加农事表
                     b = cultivatePersonCenterService.batchCommitResources(userId, content, resouceId[i]);
@@ -122,5 +128,28 @@ public class CultivatePersonCenterController {
         //如果为空 返回null
         return false;
     }
+    /**
+     * 功能描述:通过资源id删除资源
+     *
+     * @Param: [userId]
+     * @Return: Integer
+     * @Author: zbw
+     * @Date: 2020/7/28 0024 16:20
+     */
+   /* @RequestMapping("deleteResources")
+    public boolean deleteResources(Integer userId,int[] resouceId) {
+        boolean b=true;
+        //判断资源id是否为空
+        if (userId != null && resouceId.length!=0) {
+            for(int i=0;i<resouceId.length;i++){
+                //删除资源
+                b = cultivatePersonCenterService.deleteResources(resouceId[i]);
 
+            }
+            return b;
+        }
+        //如果为空 返回null
+        return false;
+    }
+*/
 }

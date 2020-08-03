@@ -13,14 +13,14 @@ import java.util.Date;
 
 /**
  * @Classname TransationHistory
- * @Description 资源（作品）
+ * @Description 资源（作品）Vo
  * @Date 2020/7/23 14:49
- * @Created by liulx
+ * @Created by zbw
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class Resource {
+public class CenterControllerResourceVo {
     // @Id表示该字段对应数据库表的主键id
     // @GeneratedValue中strategy表示使用数据库自带的主键生成策略.
     // @GeneratedValue中generator配置为"JDBC",在数据插入完毕之后,会自动将主键id填充到实体类中.类似普通mapper.xml中配置的selectKey标签
@@ -35,6 +35,7 @@ public class Resource {
     private Date publicDate;//发布时间
     private Integer imageId;
     private String imgDir;
+    private String imgName;//资源主图 名称
     //图片信息，视频信息关联图片表
     //浏览量，关注量，收藏量都用缓存实现
     private ResourceAnimalDetail resourceAnimalDetail;
@@ -43,4 +44,8 @@ public class Resource {
     private Double money;//金额
     private int masterId;//庄主id
     private int masterType;//是否被承包 1表示承包中 0表示未承包
+
+    private Integer dianzan;
+    private Integer shoucang;
+    private Integer pinglun;
 }
