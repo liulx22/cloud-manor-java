@@ -3,7 +3,6 @@ package com.buba.cloud.cloudManor.utils;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectResult;
-import com.buba.cloud.cloudManor.exceptions.ImgException;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
