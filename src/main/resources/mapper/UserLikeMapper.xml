@@ -6,7 +6,7 @@
       List<UserLike> selectUserLike(Integer userId);-->
     <select id="selectUserLike" resultType="com.buba.cloud.cloudManor.pojo.UserLike" >
     SELECT
-	u.user_name,
+	u.user_name as userName,
 	r.title AS title,
 	a.`name` AS addressName,
 	i.img_name AS imgName,
@@ -28,12 +28,12 @@ AND ul.user_id = #{userId}
     boolean  addUserLike(UserLike userLike);-->
     <insert id="addUserLike" parameterType="com.buba.cloud.cloudManor.pojo.UserLike" >
         insert into user_like (user_id, resource_id)
-        values (#{userId}, #{resourceId})
+        values (#{userId}, #{RresourceId})
     </insert>
     <!-- /*删除喜欢*/
    boolean  deleUserLike(UserLike userLike);-->
     <delete id="deleUserLike" parameterType="com.buba.cloud.cloudManor.pojo.UserLike" >
         delete from user_like
-        where user_id=#{userId} and resource_id=#{resourceId}
+        where user_id=#{userId} and resource_id=#{RresourceId}
     </delete>
 </mapper>
