@@ -13,17 +13,17 @@
     boolean resourceTreeadd(ResourceVO resourceVO);
     -->
     <insert id="resourceTreeadd">
-        insert into resourcetreedetail values (#{id},#{breedName},#{treeAge},#{yearlyOutput},#{diameter},#{leaseTime},#{geographicPosition})
+        insert into resourcetreedetail values (null,#{id},#{breedName},#{treeAge},#{yearlyOutput},#{diameter},#{leaseTime},#{geographicPosition})
     </insert>
     <!-- //添加畜牧业表
     boolean resourceAnimaladd(ResourceVO resourceVO);-->
     <insert id="resourceAnimaladd">
-        insert into resourceanimaldetail values (#{id},#{breedName},#{weight},#{colour},#{age},#{vaccine},#{geographicPosition})
+        insert into resourceanimaldetail values (null,#{id},#{breedName},#{weight},#{colour},#{age},#{vaccine},#{geographicPosition})
     </insert>
     <!--//添加地块表
     boolean resourceGroundadd(ResourceVO resourceVO);-->
     <insert id="resourceGroundadd">
-        insert into resourcegrounddetail values (#{id},#{plantType},#{yield},#{proportion},#{landType},#{leaseTime},#{geographicPosition})
+        insert into resourcegrounddetail values (null,#{id},#{plantType},#{yield},#{proportion},#{landType},#{leaseTime},#{geographicPosition})
     </insert>
 
     <!-- //上传图片表
