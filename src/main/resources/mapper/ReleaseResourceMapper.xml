@@ -6,7 +6,7 @@
     <!--//添加resource
     int resourceadd(ResourceVO resourceVO);-->
     <insert id="resourceadd" useGeneratedKeys="true" keyProperty="id">
-        insert into resource(title,reTypeCode,uid,publicDate,money) values (#{title},#{reTypeCode},#{uid},now(),#{money})
+        insert into resource(title,re_type_code,uid,public_date,money) values (#{title},#{reTypeCode},#{uid},now(),#{money})
     </insert>
     
     <!-- //添加林业表
@@ -25,4 +25,17 @@
     <insert id="resourceGroundadd">
         insert into resourcegrounddetail values (#{id},#{plantType},#{yield},#{proportion},#{landType},#{leaseTime},#{geographicPosition})
     </insert>
+
+    <!-- //上传图片表
+    int resourceImgadd(Image image);-->
+    <insert id="resourceImgadd" useGeneratedKeys="true" keyProperty="id">
+        insert into image(img_dir,img_name,code_type) values (#{imgDir},#{imgName},#{typeCode})
+    </insert>
+
+    <!--//上传图片中间表
+    boolean resourceImgRlationadd(Integer id, Integer resourceid);-->
+    <insert id="resourceImgRlationadd">
+        insert into img_rlation (type_code,image_id,other_id) values (#{typecode},#{id},#{resourceid});
+    </insert>
+    
 </mapper>
