@@ -40,9 +40,9 @@ private UserLikeService userLikeService;
     }
     //点击喜欢,取消喜欢的作品
     @RequestMapping("/deleUserLike")
-    public int deleUserLike(Integer userId,Integer resource_id){
+    public int deleUserLike(Integer user_id,Integer resource_id){
         UserLike userLike = new UserLike();
-        userLike.setUserId(userId);
+        userLike.setUserId(user_id);
         userLike.setRresourceId(resource_id);
         int userLikes = userLikeService.deleUserLike(userLike);
         if (userLikes!=0){
