@@ -96,6 +96,22 @@ public class OSSClientUtil {
         return rect;
     }
     /**
+     * 上传身份
+     * */
+    public String uploadResourceIdCard(MultipartFile file,String imagName) {
+        String rect="";
+        if (file.getSize() > 1024 * 1024) {
+            System.out.println("上传图片大小不能超过1M！");
+        }
+        try {
+            InputStream inputStream = file.getInputStream();
+            rect=this.uploadFile2OSS(inputStream, "/resource/IdCard/"+imagName);
+        } catch (Exception e) {
+            System.out.println("图片上传失败");
+        }
+        return rect;
+    }
+    /**
      * 上传资源视频
      * */
     public String uploadResourceVido(MultipartFile file,String imagName) {
@@ -187,7 +203,7 @@ public class OSSClientUtil {
             objectMetadata.setContentType(getcontentType(fileName.substring(fileName.lastIndexOf("."))));
             objectMetadata.setContentDisposition("inline;filename=" + fileName);
             //上传文件
-            PutObjectResult putResult = ossClient.putObject(bucketName, filedir + fileName, instream, objectMetadata);
+            PutObjectResult putResult = ossClient.putObject("http://"+bucketName, filedir + fileName, instream, objectMetadata);
             ret = putResult.getETag();
         } catch (IOException e) {
             System.out.println(e.getMessage());
