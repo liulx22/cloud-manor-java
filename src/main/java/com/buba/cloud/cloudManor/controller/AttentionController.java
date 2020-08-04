@@ -2,6 +2,7 @@ package com.buba.cloud.cloudManor.controller;
 
 import com.buba.cloud.cloudManor.pojo.UserAttentionVo;
 import com.buba.cloud.cloudManor.service.AttentionService;
+import com.buba.cloud.cloudManor.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
@@ -18,12 +19,18 @@ import java.util.List;
 public class AttentionController {
     @Autowired
     private AttentionService attentionService;
+    @Autowired
+    private RedisUtils redisUtils;
     @RequestMapping("SelAttrntion")
     @CrossOrigin
     @ResponseBody
     public List<UserAttentionVo> SelAttrntion(Integer id){
         List<UserAttentionVo> userAttentionVos = attentionService.SelAttrntion(id);
-        System.out.println(userAttentionVos.toString());
+       /* for (int i = 0; i <userAttentionVos.size() ; i++) {
+            UserAttentionVo userAttentionVo = userAttentionVos.get(i);
+            Integer userId = userAttentionVo.getUserId();
+        }*/
+
         return userAttentionVos;
     }
     //关注
@@ -31,11 +38,11 @@ public class AttentionController {
     @CrossOrigin
     @RequestMapping("Attrntion")
     public boolean Attrntion(Integer userId,Integer userId2) {
-        boolean attrntion = attentionService.Attrntion(userId,userId2);
-        if (attrntion==true){
+        int attrntion = attentionService.Attrntion(userId,userId2);
+        if (attrntion!=0){
             return  true;
         }else {
-            return false;
+            return  false;
         }
 
     }
@@ -44,12 +51,11 @@ public class AttentionController {
     @CrossOrigin
     @RequestMapping("CancelTheAttention")
     public boolean CancelTheAttention(Integer userId,Integer userId2) {
-        System.out.println(userId);
-        boolean b = attentionService.CancelTheAttention(userId,userId2);
-        if (b==true){
-            return true;
+        int b = attentionService.CancelTheAttention(userId,userId2);
+        if (b!=0){
+            return  true;
         }else {
-            return false;
+            return  false;
         }
 
     }

@@ -16,7 +16,7 @@ FROM
 	attention a
 
 WHERE
-	u.id = a.from_user_id
+	u.id = a.dest_user_id
 	AND u.image_id = i.id
 	and u.id=#{id}
     </select> 
