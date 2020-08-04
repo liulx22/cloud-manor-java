@@ -2,6 +2,7 @@ package com.buba.cloud.cloudManor.controller;
 
 import com.buba.cloud.cloudManor.pojo.Image;
 import com.buba.cloud.cloudManor.service.NurseVerificationService;
+import com.buba.cloud.cloudManor.utils.OSSUtils;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +32,7 @@ public class NurseVerificationController {
         //手持身份前缀
         String f2 = 1 + "_" + filename + "_03";
         //图片存放地址
-        String a="https://lzj-picservice.oss-cn-beijing.aliyuncs.com/CloudManor_Pic";
+        String a="https://lzj-picservice.oss-cn-beijing.aliyuncs.com";
         List<File> files = new ArrayList<>();
         //身份正后缀
         String fileName = cardzheng.getOriginalFilename();
@@ -57,26 +58,30 @@ public class NurseVerificationController {
         files.add(file1);
         files.add(file2);
         files.add(file3);
-
-        //OSSUtils.putUpload(files);
+        String keyName="CloudManor_Pic/IdentityInformation/";
+        if(fileName!=""|fileName1!=""|fileName2!=""){
+            OSSUtils.putUpload(files,keyName);
+        }else {
+            return false;
+        }
 
         Image image=new Image();
         image.setImgName(f+suffix);
-        image.setImgDir(a);
-        image.setCodeType("user_identity");
+        image.setImgDir(a+keyName);
+        image.setTypeCode("user_identity");
 
         //添加养护人信息
         boolean b=nurseVerificationService.VerificationInsert(image,userId);
         Image image1=new Image();
         image1.setImgName(f+suffix);
-        image1.setImgDir(a);
-        image1.setCodeType("user_identity");
+        image1.setImgDir(a+keyName);
+        image1.setTypeCode("user_identity");
         boolean b1=nurseVerificationService.VerificationInsert(image1,userId);
 
         Image image2=new Image();
         image2.setImgName(f2+suffix);
-        image2.setImgDir(a);
-        image2.setCodeType("user_identity");
+        image2.setImgDir(a+keyName);
+        image2.setTypeCode("user_identity");
         boolean b2=nurseVerificationService.VerificationInsert(image2,userId);
         if(b==true|b1==true|b2==true){
             return true;

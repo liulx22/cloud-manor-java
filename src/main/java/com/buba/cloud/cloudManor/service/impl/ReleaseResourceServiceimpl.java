@@ -72,7 +72,7 @@ public class ReleaseResourceServiceimpl implements ReleaseResourceService {
                 typeCode=1;
             }
             if (typeCode!=0){
-                b=releaseResourceMapper.resourceImgRlationadd(image.getId(),resourceid,typeCode);
+                b=releaseResourceMapper.resourceImgRlationadd(typeCode,image.getId(),resourceid);
             }
         }
         return b;

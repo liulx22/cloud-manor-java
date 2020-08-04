@@ -10,6 +10,7 @@ import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.service.CommentServive;
 import com.buba.cloud.cloudManor.service.ImageService;
 import com.buba.cloud.cloudManor.service.ResourceService;
+import com.buba.cloud.cloudManor.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,9 +28,8 @@ public class LordzhuangdetailsController {
     private ImageService imageService;
     @Autowired
     private CommentServive commentServive;
-
-    // 连接 Redis 数据库 , 获取连接对象
-    Jedis jedis = new Jedis("127.0.0.1");
+    @Autowired
+    private RedisUtils redisUtils;
 
 
     /**
@@ -79,69 +79,6 @@ public class LordzhuangdetailsController {
 
 
 
-    /**
-     * 功能描述:点赞加+
-     * @Param: [dianzan，userid]
-     * @Return: com.buba.cloud.cloudManor.pojo.Resource
-     * @Author: zah
-     * @Date: 2020/7/27 0027 15:04
-     */
-    @RequestMapping("dianzan")
-    @ResponseBody
-    public String dianzan(String dianzan,Integer userid) {//获取前端参数uid
-
-        //发布视频用户id
-        String key = "likeCount" + userid;
-
-        if (dianzan =="0") {
-            jedis.set(key, dianzan);
-            //点赞数＋1
-            Long dian = jedis.incr(key);
-            return "success_jsonp3(" + JSONObject.toJSONString(dian) + ")";
-        } else {
-            //点赞数＋1
-            Long dian = jedis.incr(key);
-            return "success_jsonp3(" + JSONObject.toJSONString(dian) + ")";
-        }
-    }
-
-
-
-    /**
-     * 功能描述:点赞减-
-     * @Param: [userid]
-     * @Return: com.buba.cloud.cloudManor.pojo.Resource
-     * @Author: zah
-     * @Date: 2020/7/27 0027 15:04
-     */
-    @RequestMapping("dcrdianzan")
-    @ResponseBody
-    public String dcrdianzan(Integer userid) {//获取前端参数uid
-        //用户id
-        String key = "likeCount" + userid;
-        //自减数-1
-        Long dian = jedis.decr(key);
-        return "success_jsonp5(" + JSONObject.toJSONString(dian) + ")";
-    }
-
-
-    /**
-     * 功能描述:查询点赞数
-     * @Param: [userid]
-     * @Return: String
-     * @Author: zah
-     * @Date: 2020/7/27 0027 15:04
-     */
-    @RequestMapping("selectDianZan")
-    @ResponseBody
-    public String selectDianZan(Integer userid){//-------获取前端参数uid
-       // int uid=1;//前端资源中获取用户id
-        String key="likeCount"+userid;
-        String dian= jedis.get(key);
-        System.out.println( "success_jsonp4("+JSONObject.toJSONString(dian)+")");
-        return  "success_jsonp4("+JSONObject.toJSONString(dian)+")";
-
-    }
 
 
 
@@ -201,6 +138,7 @@ public class LordzhuangdetailsController {
     }
 
 
+
     /**
      * 功能描述:预览+
      * @Param: [String yuLan,Integer userid]
@@ -214,20 +152,20 @@ public class LordzhuangdetailsController {
         //发布视频用户id
         String key = "yuLanCount" + userid;
         if (yuLan =="0") {
-            jedis.set(key, yuLan);
+            redisUtils.set(key, yuLan);
             //预览数＋1
-            Long dian = jedis.incr(key);
+            Long dian = redisUtils.incr(key,1);
             return "success_jsonpYuLan(" + JSONObject.toJSONString(dian) + ")";
         } else {
             //预览数＋1
-            Long dian = jedis.incr(key);
+            Long dian = redisUtils.incr(key,1);
             return "success_jsonpYuLan(" + JSONObject.toJSONString(dian) + ")";
         }
     }
 
 
     /**
-     * 功能描述:查询点赞数
+     * 功能描述:查询预览数
      * @Param: [Integer userid]
      * @Return: String
      * @Author: zah
@@ -237,10 +175,9 @@ public class LordzhuangdetailsController {
     @ResponseBody
     public String selectYuLan(Integer userid){//-------获取前端参数uid
         String key="yuLanCount"+userid;
-        String dian= jedis.get(key);
+        Object dian=  redisUtils.get(key);
         System.out.println( "success_jsonpSelectYuLan("+JSONObject.toJSONString(dian)+")");
         return  "success_jsonpSelectYuLan("+JSONObject.toJSONString(dian)+")";
     }
-
 
 }

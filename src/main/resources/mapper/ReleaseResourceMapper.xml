@@ -6,14 +6,14 @@
     <!--//添加resource
     int resourceadd(ResourceVO resourceVO);-->
     <insert id="resourceadd" useGeneratedKeys="true" keyProperty="id">
-        insert into resource(title,re_type_code,uid,public_date,money) values (#{title},#{reTypeCode},#{uid},now(),#{money})
+        insert into resource(title,re_type_code,uid,public_date,money,master_type) values (#{title},#{reTypeCode},#{uid},now(),#{money},0)
     </insert>
     
     <!-- //添加林业表
     boolean resourceTreeadd(ResourceVO resourceVO);
     -->
     <insert id="resourceTreeadd">
-        insert into resourcetreedetail values (null,#{id},#{breedName},#{treeAge},#{yearlyOutput},#{diameter},#{leaseTime},#{geographicPosition})
+        insert into resourcetreedetail values (null,#{id},#{breedName},#{treeAge},#{yearlyOutput},#{diameter},#{leaseTime},#{geographicPosition},now())
     </insert>
     <!-- //添加畜牧业表
     boolean resourceAnimaladd(ResourceVO resourceVO);-->
