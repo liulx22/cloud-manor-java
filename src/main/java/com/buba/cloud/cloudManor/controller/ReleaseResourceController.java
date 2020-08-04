@@ -81,7 +81,7 @@ public class ReleaseResourceController {
                         }
                         image.setImgDir("");
                         image.setImgName(imgName);
-                        image.setTypeCode(typeCode);
+                        image.setCodeType(typeCode);
                         //图片上传
                         if (resourceid!=null){
                             b=releaseResourceService.resourceImgadd(image,resourceid);
