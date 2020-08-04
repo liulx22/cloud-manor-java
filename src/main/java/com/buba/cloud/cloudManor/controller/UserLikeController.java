@@ -14,7 +14,7 @@ import java.util.List;
 public class UserLikeController {
 @Autowired
 private UserLikeService userLikeService;
-
+int s=0;//自定义一个喜欢的个数
 
     //查询点了喜欢的作品 参数：用户id
         @RequestMapping("/selectUserLike")
@@ -22,6 +22,7 @@ private UserLikeService userLikeService;
             System.out.println(userId);
         List<UserLike> userLikes = userLikeService.selectUserLike(userId);
         if (userLikes!=null){
+            s=userLikes.size();
             return userLikes;
         }
         return null;
