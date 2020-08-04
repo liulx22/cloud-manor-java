@@ -28,27 +28,27 @@ private UserLikeService userLikeService;
     }
     //点击喜欢,添加喜欢的作品 参数：Integer user_id,Integer resource_id （登录人id与作品id）
     @RequestMapping("/addUserLike")
-    public boolean addUserLike(Integer user_id,Integer resource_id){
+    public int addUserLike(Integer user_id,Integer resource_id){
         UserLike like = new UserLike();
         like.setUserId(user_id);
         like.setRresourceId(resource_id);
         int userLikes = userLikeService.addUserLike(like);
         if (userLikes!=0){
-            return true;
+            return userLikes;
         }
-        return false;
+        return 0;
     }
     //点击喜欢,取消喜欢的作品
     @RequestMapping("/deleUserLike")
-    public boolean deleUserLike(Integer userId,Integer resource_id){
+    public int deleUserLike(Integer user_id,Integer resource_id){
         UserLike userLike = new UserLike();
-        userLike.setUserId(userId);
+        userLike.setUserId(user_id);
         userLike.setRresourceId(resource_id);
         int userLikes = userLikeService.deleUserLike(userLike);
         if (userLikes!=0){
-            return true;
+            return userLikes;
         }
-        return false;
+        return 0;
     }
 
 }

@@ -13,7 +13,7 @@
     boolean resourceTreeadd(ResourceVO resourceVO);
     -->
     <insert id="resourceTreeadd">
-        insert into resourcetreedetail values (null,#{id},#{breedName},#{treeAge},#{yearlyOutput},#{diameter},#{leaseTime},#{geographicPosition})
+        insert into resourcetreedetail values (null,#{id},#{breedName},#{treeAge},#{yearlyOutput},#{diameter},#{leaseTime},#{geographicPosition},now())
     </insert>
     <!-- //添加畜牧业表
     boolean resourceAnimaladd(ResourceVO resourceVO);-->
