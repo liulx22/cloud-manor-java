@@ -4,10 +4,10 @@
 <mapper namespace="com.buba.cloud.cloudManor.mapper.NurseVerificationMapper">
    <!-- boolean VerificationInsert(Image image);-->
 	<insert id="VerificationInsert" useGeneratedKeys="true"  keyProperty="id">
-      insert into Image(typeCode,imgName,imgDir) values (#{typeCode},#{imgName},#{imgDir})
+      insert into Image(type_code,img_name,img_dir) values (#{typeCode},#{imgName},#{imgDir})
 	</insert>
 	<!--    boolean InsertImgRlation(@Param("image") Image image, @Param("userId") Integer userId);-->
 	<insert id="InsertImgRlation">
-		insert into ImgRlation(imageId,otherId) values (#{image.id},#{userId})
+		insert into ImgRlation(image_id,other_id,type_code) values (#{image.id},#{userId},19)
 	</insert>
 </mapper>

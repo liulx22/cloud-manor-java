@@ -1,7 +1,6 @@
 spring:
   datasource:
     url: jdbc:mysql://123.56.254.245:3306/cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
-    #cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -9,6 +8,14 @@ spring:
     database: 1
     host: 123.56.254.245
     port: 6800
+  http:
+    multipart:
+      maxFileSize: 5MB
+      maxRequestSize: 30MB
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.buba.cloud.cloudManor.pojo
