@@ -6,7 +6,7 @@
     <!--//添加resource
     int resourceadd(ResourceVO resourceVO);-->
     <insert id="resourceadd" useGeneratedKeys="true" keyProperty="id">
-        insert into resource(title,re_type_code,uid,public_date,money) values (#{title},#{reTypeCode},#{uid},now(),#{money})
+        insert into resource(title,re_type_code,uid,public_date,money,master_type) values (#{title},#{reTypeCode},#{uid},now(),#{money},0)
     </insert>
     
     <!-- //添加林业表
@@ -29,7 +29,7 @@
     <!-- //上传图片表
     int resourceImgadd(Image image);-->
     <insert id="resourceImgadd" useGeneratedKeys="true" keyProperty="id">
-        insert into image(img_dir,img_name,code_type) values (#{imgDir},#{imgName},#{codeType})
+        insert into image(img_dir,img_name,type_code) values (#{imgDir},#{imgName},#{typeCode})
     </insert>
 
     <!--//上传图片中间表

@@ -4,7 +4,7 @@
 <mapper namespace="com.buba.cloud.cloudManor.mapper.NurseVerificationMapper">
    <!-- boolean VerificationInsert(Image image);-->
 	<insert id="VerificationInsert" useGeneratedKeys="true"  keyProperty="id">
-      insert into Image(code_type,img_name,img_dir) values (#{codeType},#{imgName},#{imgDir})
+      insert into Image(type_code,img_name,img_dir) values (#{typeCode},#{imgName},#{imgDir})
 	</insert>
 	<!--    boolean InsertImgRlation(@Param("image") Image image, @Param("userId") Integer userId);-->
 	<insert id="InsertImgRlation">
