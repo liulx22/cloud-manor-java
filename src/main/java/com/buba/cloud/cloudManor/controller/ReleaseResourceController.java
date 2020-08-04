@@ -101,7 +101,7 @@ public class ReleaseResourceController {
                         //添加实体类
                         image.setImgDir("http://lzj-picservice.oss-cn-beijing.aliyuncs.com/"+keyname);
                         image.setImgName(imgName);
-                        image.setCodeType(typeCode);
+                        image.setTypeCode(typecode);
                         //图片上传数据库
                         if (resourceid!=null){
                             b=releaseResourceService.resourceImgadd(image,resourceid);

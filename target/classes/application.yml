@@ -1,28 +1,34 @@
-#r热部署
 spring:
-  devtools:
-    restart:
-      enabled: true
   datasource:
-    url: jdbc:mysql://localhost:3306/cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://123.56.254.245:3306/cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
+    #cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
     username: root
-    password: root
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   redis:
-    host: 127.0.0.1
+    database: 1
+    host: 47.94.236.46
     port: 6379
-
+  http:
+    multipart:
+      maxFileSize: 5MB
+      maxRequestSize: 30MB
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  #起别名
   type-aliases-package: com.buba.cloud.cloudManor.pojo
-   #开启懒加载
-  aggressive-lazy-loading: true
-  #驼峰命名
+  #开启驼峰命名
   configuration:
     map-underscore-to-camel-case: true
 #打印sql
 logging:
   level:
     com.buba.cloud.cloudManor.mapper: debug
+
+server:
+  port: 8080
+
+

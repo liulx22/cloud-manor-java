@@ -58,7 +58,7 @@ public class NurseVerificationController {
         files.add(file1);
         files.add(file2);
         files.add(file3);
-        String keyName="CloudManor_Pic/IdentityInformation";
+        String keyName="CloudManor_Pic/IdentityInformation/";
         if(fileName!=""|fileName1!=""|fileName2!=""){
             OSSUtils.putUpload(files,keyName);
         }else {
@@ -68,20 +68,20 @@ public class NurseVerificationController {
         Image image=new Image();
         image.setImgName(f+suffix);
         image.setImgDir(a+keyName);
-        image.setCodeType("user_identity");
+        image.setTypeCode("user_identity");
 
         //添加养护人信息
         boolean b=nurseVerificationService.VerificationInsert(image,userId);
         Image image1=new Image();
         image1.setImgName(f+suffix);
         image1.setImgDir(a+keyName);
-        image1.setCodeType("user_identity");
+        image1.setTypeCode("user_identity");
         boolean b1=nurseVerificationService.VerificationInsert(image1,userId);
 
         Image image2=new Image();
         image2.setImgName(f2+suffix);
         image2.setImgDir(a+keyName);
-        image2.setCodeType("user_identity");
+        image2.setTypeCode("user_identity");
         boolean b2=nurseVerificationService.VerificationInsert(image2,userId);
         if(b==true|b1==true|b2==true){
             return true;
