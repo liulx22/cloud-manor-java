@@ -29,7 +29,7 @@
     <!-- //上传图片表
     int resourceImgadd(Image image);-->
     <insert id="resourceImgadd" useGeneratedKeys="true" keyProperty="id">
-        insert into image(img_dir,img_name,code_type) values (#{imgDir},#{imgName},#{codeType})
+        insert into image(img_dir,img_name,type_code) values (#{imgDir},#{imgName},#{typeCode})
     </insert>
 
     <!--//上传图片中间表
