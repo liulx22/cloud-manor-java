@@ -58,7 +58,7 @@ public class NurseVerificationController {
         files.add(file1);
         files.add(file2);
         files.add(file3);
-        String keyName="CloudManor_Pic/IdentityInformation";
+        String keyName="CloudManor_Pic/IdentityInformation/";
         if(fileName!=""|fileName1!=""|fileName2!=""){
             OSSUtils.putUpload(files,keyName);
         }else {
