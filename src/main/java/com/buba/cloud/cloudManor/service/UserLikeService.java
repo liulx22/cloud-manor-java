@@ -12,4 +12,6 @@ public interface UserLikeService {
     int  addUserLike(UserLike userLike);
     //取消喜欢
     int  deleUserLike(UserLike userLike);
+    //返回喜欢量
+    int selectuserlikemanor(Integer userId);
 }
