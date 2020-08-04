@@ -24,7 +24,7 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "JDBC")
     private Integer id;
-    private String codeType;//关联Digital表中图片类型的code
+    private String typeCode;//关联Digital表中图片类型的code
     private String imgName;//图片名称
     private String imgDir;//存放路径
     private String userName;//中文名
