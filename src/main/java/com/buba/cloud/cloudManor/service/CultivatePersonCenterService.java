@@ -29,6 +29,5 @@ public interface CultivatePersonCenterService {
 
     //通过资源id删除资源表数据
     boolean deleteResources(int i);
-    /*通过资源id删除资源*/
-    boolean deleteResources(int i);
+
 }
