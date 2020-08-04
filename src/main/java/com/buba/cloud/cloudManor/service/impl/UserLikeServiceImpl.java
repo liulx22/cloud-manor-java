@@ -28,7 +28,7 @@ public class UserLikeServiceImpl implements UserLikeService {
     public int addUserLike(UserLike userLike) {
         Integer rresourceId = userLike.getRresourceId();//获取作品id
         String s = rresourceId.toString();//将int转为 String类型
-         redisUtils.hset("resourceId_number","resourceid_"+s,2);//先设置初始值
+         redisUtils.hset("resourceId_number","resourceid_"+s,0);//先设置初始值
         int i = userLikeMapper.addUserLike(userLike);//添加mysql操作
         if (i!=0){//如果成功添加至mysql
             Integer resourceId_number = (Integer)redisUtils.hget("resourceId_number", "resourceid_" + s);//获取redis中的点赞量
