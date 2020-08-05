@@ -12,7 +12,7 @@ public interface AttentionMapper {
     //查询关注人
     List<UserAttentionVo> SelAttrntion(Integer id);
     //关注
-    boolean Attrntion(@Param("userId") Integer userId, @Param("userId2")Integer userId2);
+    int Attrntion(@Param("userId") Integer userId, @Param("userId2")Integer userId2);
     //取消关注
-    boolean CancelTheAttention(@Param("userId")Integer userId,@Param("userId2")Integer userId2);
+    int CancelTheAttention(@Param("userId")Integer userId,@Param("userId2")Integer userId2);
 }

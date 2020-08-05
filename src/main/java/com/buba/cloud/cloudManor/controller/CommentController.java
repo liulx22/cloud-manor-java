@@ -32,10 +32,23 @@ public class CommentController {
 
     @ResponseBody
     @RequestMapping("delete")
-    public int delete(int id){
+    public int delete(int id,Integer userId){
         System.out.println(id+"deletedeletedeletedeletedeletedeletedeletedeletedeletedeletedeletedelete");
-        int delete = commentService.delete(id);
+        int delete = commentService.delete(id,userId);
 
         return delete;
     }
+
+    @ResponseBody
+    @RequestMapping("addComment")
+   public int addComment(Integer userId, String content, Integer resourceId, Integer pid) {
+        int i = commentService.addComment(userId, content, resourceId, pid);
+        if(i!=0){
+            return i;
+        }else {
+            System.out.println("添加失败");
+            return 0;
+        }
+    }
+
 }

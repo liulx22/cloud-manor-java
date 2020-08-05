@@ -14,7 +14,7 @@ public interface CommentMapper {
 
     List<Comment> getAllWo(int id);
     List<Comment> getAll(int id);
-    int delete (int id);
+    int delete (@Param("id")int id,@Param("userId") Integer userId);
 
 
 }
