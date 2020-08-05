@@ -23,32 +23,81 @@ public class AttentionServiceImpl implements AttentionService {
 
     @Override
     public int Attrntion(Integer userId,Integer userId2) {
-        String s = userId2.toString();
-        //设置初始值
-        redisUtils.hset("manor_attention_num", "manor_id" + s, 0);
         int b=  attentionMapper.Attrntion(userId,userId2);
       if (b!=0){
-          // 获取redis中的关注
-          Integer manor_attention_num =(Integer) redisUtils.hget("manor_attention_num", "manor_id" + s);
-          //添加数据库成功 让Redis+1
-          redisUtils.hset("manor_attention_num","manor_id"+s,manor_attention_num+1);
+          boolean b1 = redisUtils.hHasKey("manor_attention_num", "manor_attention"+userId2 );
+          if (b1==false){
+             //设置初始值并为1
+              redisUtils.hset("manor_attention_num", "manor_attention" + userId2, 1);
+          }else {
+              //如果该key与itm存在
+              //获取redis中的关注量
+              Integer manor_attention_num1 = (Integer) redisUtils.hget("manor_attention_num", "manor_attention" + userId2);
+              //让redis中的关注人量+1
+              redisUtils.hset("manor_attention_num", "manor_attention" + userId2, manor_attention_num1+1);
+          }
+          //判断该key与item是否存在
+          boolean manor_attention_num = redisUtils.hHasKey("manor_attention_num_1", "manor_id" + userId);
+          if (manor_attention_num == false) {
+              //设置初始值并为1
+              redisUtils.hset("manor_attention_num_1", "manor_id" + userId, 1);
+              //如果该key与itm存在
+          } else {
+              //获取redis中的关注人
+              Integer userId_1 = (Integer) redisUtils.hget("manor_attention_num_1", "manor_id" + userId);
+              //让redis中的点
+              redisUtils.hset("manor_attention_num_1", "manor_id" + userId, userId_1 + 1);
+          }
+
       }
-        //添加成功返回关注数量
-        Integer manor_attention_num = (Integer) redisUtils.hget("manor_attention_num", "manor_id" + s);
-        return manor_attention_num;
+      //返回关注量
+        Integer manor_attention_num10 = (Integer) redisUtils.hget("manor_attention_num", "manor_id" + userId2);
+        return manor_attention_num10;
     }
 
     @Override
     public int CancelTheAttention(Integer userId,Integer userId2) {
-        String s = userId2.toString();
         int i = attentionMapper.CancelTheAttention(userId, userId2);
         if (i!=0){
-            // 获取redis中的关注量
-            Integer manor_attention_num =(Integer) redisUtils.hget("maitain_attention_num:", "maintain_id" + s);
-            //数据库删除成功
-            redisUtils.hset("maitain_attention_num:","maintain_id"+s,manor_attention_num-1);
+            //判断该key与item是否存在
+            boolean manor_attention_num_2 = redisUtils.hHasKey("manor_attention_num", "manor_attention" + userId);
+            if (manor_attention_num_2 ==false) {
+                //设置初始值并为1
+                redisUtils.hset("manor_attention_num", "manor_attention" + userId, 1);
+            } else {
+                //如果该key与item存在
+                //获取redis中的关注
+                Integer manor_attention_num_1 = (Integer) redisUtils.hget("manor_attention_num", "manor_attention" + userId);
+                //让redis中的关注量-1
+                redisUtils.hset("manor_attention_num", "manor_attention" + userId, manor_attention_num_1 - 1);
+            }
+            //判断该key与item是否存在
+            boolean manor_attention_num_3 = redisUtils.hHasKey("manor_attention_num_1", "manor_id" + userId2);
+            if (manor_attention_num_3 ==false) {
+                //设置初始值并为1
+                redisUtils.hset("manor_attention_num_1", "manor_id" + userId2, 1);
+            } else {
+                //获取redis中的关注量
+                Integer resource_like_number1 = (Integer) redisUtils.hget("manor_attention_num_1", "manor_id" + userId2);
+                //让redis中的关注量-1
+                redisUtils.hset("manor_attention_num_1", "manor_id" + userId2, resource_like_number1 - 1);
+            }
         }
-        Integer hget = (Integer) redisUtils.hget("maitain_attention_num:", "maintain_id" + s);
-        return hget;
+        //返回关注数量
+        Integer manor_attention_num_4 = (Integer) redisUtils.hget("manor_attention_num", "manor_id" + userId2);
+        return manor_attention_num_4;
+    }
+
+    @Override
+    public int SelectAttention(Integer userId2) {
+        //获取关注数量
+        Integer manor_attention_num =(Integer) redisUtils.hget("manor_attention_num", "manor_attention" + userId2);
+        return manor_attention_num;
+    }
+
+    @Override
+    public int SelectAttention_1(Integer userId) {
+        Integer userId_1 = (Integer) redisUtils.hget("manor_attention_num_1", "manor_id" + userId);
+        return userId_1;
     }
 }
