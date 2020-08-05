@@ -16,27 +16,4 @@
      LEFT JOIN resource on `user`.id=resource.uid
      and resource.id=#{resourceId}
     </select>
-    <!--  List<Comment> getAllWo(int id); 查询评论我的-->
-    <select id="getAllWo" resultType="com.buba.cloud.cloudManor.pojo.Comment">
-       SELECT * ,`image`.`img_dir`,(SELECT `image`.`img_dir`  FROM `image` WHERE `image`.`id`=`resource`.`image_id`)AS imagetu,`comment`.`id` AS commentId,`comment`.*
-FROM `user`,`resource`,`comment`,`image`
-WHERE `resource`.`uid`=#{id}
-AND `comment`.`resource_id`=`resource`.`id`
-AND `user`.`image_id`=`image`.`id`
-AND `user`.`id`=`comment`.`user_id`
-    </select>
-    <!--  List<Comment> getAll(int id); 查询我评论的人-->
-    <select id="getAll" resultType="com.buba.cloud.cloudManor.pojo.Comment">
-     SELECT `image`.`img_dir`,(SELECT `image`.`img_dir`  FROM `image` WHERE `image`.`id`=`resource`.image_id)AS imagetu,`user`.`user_name`,`comment`.`content`
-FROM`comment`,`image`,`resource`,`user`
-WHERE `user`.`id`=#{id}
-AND `user`.`id`=`comment`.`user_id`
-AND `user`.`image_id`=`image`.`id`
-AND `comment`.`resource_id`=`resource`.`id`
-AND `resource`.`uid`=`user`.`id`
-    </select>
-    <!--int delete (int id); 删除评论-->
-    <delete id="delete">
-        delete from `comment` where id=#{id}
-    </delete>
 </mapper>
