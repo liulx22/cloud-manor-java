@@ -2,6 +2,7 @@ package com.buba.cloud.cloudManor.controller;
 
 import com.buba.cloud.cloudManor.pojo.UserAttentionVo;
 import com.buba.cloud.cloudManor.service.AttentionService;
+import com.buba.cloud.cloudManor.service.UserLikeService;
 import com.buba.cloud.cloudManor.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ public class AttentionController {
     private AttentionService attentionService;
     @Autowired
     private RedisUtils redisUtils;
+    @Autowired
+    UserLikeService userLikeService;
+
     @RequestMapping("SelAttrntion")
     @CrossOrigin
     @ResponseBody
@@ -41,9 +45,9 @@ public class AttentionController {
         int attrntion = attentionService.Attrntion(userId,userId2);
         if (attrntion!=0){
             return  true;
-        }else {
-            return  false;
         }
+            return  false;
+
 
     }
     //取消关注
@@ -54,9 +58,9 @@ public class AttentionController {
         int b = attentionService.CancelTheAttention(userId,userId2);
         if (b!=0){
             return  true;
-        }else {
-            return  false;
         }
+            return  false;
 
     }
+
 }

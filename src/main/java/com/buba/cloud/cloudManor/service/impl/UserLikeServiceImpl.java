@@ -35,14 +35,14 @@ public class UserLikeServiceImpl implements UserLikeService {
         int i = userLikeMapper.addUserLike(userLike);//添加mysql操作
         if (i != 0) {//如果成功添加至mysql
             boolean manor_like_number = redisUtils.hHasKey("manor_like_number", "manor_" + userId);//判断该key与itm是否存在
-            if (manor_like_number=false){//如果不存在
+            if (manor_like_number==false){//如果不存在
                 redisUtils.hset("manor_like_number", "manor_" + userId, 1);//设置初始值并为1
             }else {//如果该key与itm存在
                 Integer manor_like_number1 = (Integer) redisUtils.hget("manor_like_number", "manor_" + userId);//获取redis中的喜欢量
                 redisUtils.hset("manor_like_number", "manor_" + userId, manor_like_number1+1);//让redis中的喜欢量加一
             }
             boolean resource_like_number = redisUtils.hHasKey("resource_like_number", "resourceId_" + rresourceId);//判断该key与itm是否存在
-            if (resource_like_number = false) {//如果不存在
+            if (resource_like_number == false) {//如果不存在
                 redisUtils.hset("resource_like_number", "resourceId_" + rresourceId, 1);//设置初始值并为1
             } else {//如果该key与itm存在
                 Integer resourceId_number1 = (Integer) redisUtils.hget("resource_like_number", "resourceId_" + rresourceId);//获取redis中的点赞量
@@ -58,11 +58,11 @@ public class UserLikeServiceImpl implements UserLikeService {
     public int deleUserLike(UserLike userLike) {
         Integer rresourceId = userLike.getRresourceId();//获取作品id
         Integer userId = userLike.getUserId();
-    /*    String s = rresourceId.toString();//将int转为 String类型*/
+
         int i = userLikeMapper.deleUserLike(userLike);//删除mysql操作
         if (i != 0) {//如果成功在mysql删除
             boolean manor_like_number = redisUtils.hHasKey("manor_like_number", "manor_" + userId);//判断该key与itm是否存在
-            if (manor_like_number = false) {//如果不存在
+            if (manor_like_number == false) {//如果不存在
                 redisUtils.hset("manor_like_number", "manor_" + userId, 1);//设置初始值并为1
             } else {//如果该key与itm存在
                 Integer manor_like_number1 = (Integer) redisUtils.hget("manor_like_number", "manor_" + userId);//获取redis中的点赞量
@@ -70,7 +70,7 @@ public class UserLikeServiceImpl implements UserLikeService {
             }
 
             boolean resource_like_number = redisUtils.hHasKey("resource_like_number", "resourceId_" + rresourceId);//判断该key与itm是否存在
-            if (resource_like_number = false) {//如果不存在
+            if (resource_like_number == false) {//如果不存在
                 redisUtils.hset("resource_like_number", "resourceId_" + rresourceId, 1);//设置初始值并为1
             } else {//如果该key与itm存在
                 Integer resource_like_number1 = (Integer) redisUtils.hget("resource_like_number", "resourceid_" + rresourceId);//获取redis中的点赞量
