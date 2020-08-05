@@ -16,14 +16,14 @@ FROM
 	attention a
 
 WHERE
-	u.id = a.from_user_id
+	u.id = a.dest_user_id
 	AND u.image_id = i.id
 	and u.id=#{id}
-    </select>
+    </select> 
     <delete id="CancelTheAttention">
-        delete from attention where dest_user_id=#{userId} and from_user_id=#{userId2}
+        delete from attention where dest_user_id=#{userId2} and from_user_id=#{userId}
     </delete>
     <insert id="Attrntion">
-        insert into attention(from_user_id, dest_user_id)values(#{userId2},#{userId});
+        insert into attention(from_user_id, dest_user_id)values(#{userId},#{userId2});
     </insert>
 </mapper>
