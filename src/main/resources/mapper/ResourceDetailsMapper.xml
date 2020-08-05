@@ -3,12 +3,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.buba.cloud.cloudManor.mapper.ResourceDetailsMapper">
     <!--/*获取农事*/
-    Agriculture GETAgriculture(@Param("id") int id);-->
+    Agriculture GETAgriculture(@Param("id") int rid,int mid);-->
     <select id="GETAgriculture" resultType="com.buba.cloud.cloudManor.pojo.Agriculture">
         select agriculture.id,agriculture.content,agriculture.put_time
-        FROM agriculture,rseource
-        WHERE rseource.id=agriculture.resource_id
-        and rseource.master_id=#{mid}
+        FROM agriculture,resource
+        WHERE resource.id=agriculture.resource_id
+        and resource.master_id=#{mid}
         and agriculture.resource_id=#{rid}
         ORDER BY agriculture.put_time DESC LIMIT 0,1
     </select>
@@ -22,12 +22,12 @@
     List<AgricultureOperation> GETAgricultureOperation(@Param("id") int rid，int mid);-->
     <select id="GETAgricultureOperation" resultType="com.buba.cloud.cloudManor.pojo.AgricultureOperation">
         select a.id,a.oper_time,a.title,image.img_name,image.img_dir
-        from agriculture_operation as a,img_rlation,image,rseource
-        where rseource.id=a.resource_id
+        from agriculture_operation as a,img_rlation,image,resource
+        where resource.id=a.resource_id
         and a.id=img_rlation.other_id
         and img_rlation.image_id=image.id
-		and rseource.master_id=#{mid}
-        and image.type_code="resource"
+		and resource.master_id=#{mid}
+        and image.type_code="maint_records"
         and a.resource_id=#{rid}
     </select>
 </mapper>

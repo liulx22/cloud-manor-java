@@ -15,6 +15,6 @@ public interface UserLikeService {
     //返回喜欢量
     int selectuserlikemanor(Integer userId);
     //返回喜欢量
-    int selectresourcelik(Integer userId);
+    int selectresourcelik(Integer rresourceId);
 
 }
