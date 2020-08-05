@@ -2,6 +2,7 @@ package com.buba.cloud.cloudManor.controller;
 
 import com.buba.cloud.cloudManor.pojo.IndexVO;
 import com.buba.cloud.cloudManor.pojo.OrderAgricultureVO;
+import com.buba.cloud.cloudManor.service.AttentionService;
 import com.buba.cloud.cloudManor.service.CommentServive;
 import com.buba.cloud.cloudManor.service.MyManorService;
 import com.buba.cloud.cloudManor.service.UserLikeService;
@@ -27,11 +28,13 @@ public class MyManorController {
     private UserLikeService userLikeService;
     @Autowired
     private CommentServive commentServive;
+    @Autowired
+    private AttentionService attentionService;
 
     //获取我的关注数量
     @RequestMapping("getAttentionNum")
     public int getAttentionNum(Integer userId){
-        return myManorService.getAttentionNum(userId);
+        return attentionService.SelectAttention_1(userId);
     }
     //获取我的喜欢数量
     @RequestMapping("getMyLikeNum")
