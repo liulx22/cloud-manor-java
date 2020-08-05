@@ -15,7 +15,7 @@ import java.util.Date;
 @Data
 public class Order {
     private Integer id;
-    private String orderNo;//订单编号   yyyymmddxxx
+    private Long orderNo;//订单编号   yyyymmddxxx
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date orderTime;//下单时间
