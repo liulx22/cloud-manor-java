@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.buba.cloud.cloudManor.mapper.ResourceDetailsMapper">
     <!--/*获取农事*/
-    Agriculture GETAgriculture(@Param("id") int id);-->
+    Agriculture GETAgriculture(@Param("id") int rid,int mid);-->
     <select id="GETAgriculture" resultType="com.buba.cloud.cloudManor.pojo.Agriculture">
         select agriculture.id,agriculture.content,agriculture.put_time
         FROM agriculture,resource
