@@ -137,8 +137,8 @@ public class CultivatePersonCenterImpl implements CultivatePersonCenterService {
         return cultivatePersonCenterMapper.batchCommitResources( userId,  content,  resourceId);
     }
     //通过资源id删除资源表数据
-   /* @Override
+    @Override
     public boolean deleteResources(int i) {
         return cultivatePersonCenterMapper.deleteResources( i);
-    }*/
+    }
 }
