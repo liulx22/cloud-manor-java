@@ -136,7 +136,7 @@ public class CultivatePersonCenterController {
      * @Author: zbw
      * @Date: 2020/7/28 0024 16:20
      */
-   /* @RequestMapping("deleteResources")
+    @RequestMapping("deleteResources")
     public boolean deleteResources(Integer userId,int[] resouceId) {
         boolean b=true;
         //判断资源id是否为空
@@ -151,5 +151,5 @@ public class CultivatePersonCenterController {
         //如果为空 返回null
         return false;
     }
-*/
+
 }

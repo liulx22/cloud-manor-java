@@ -18,9 +18,7 @@ public class IndexVO {
     private String title;
     private String reTypeCode;//视频类型
     private String videoPath;//视频地址
-    private String fruiterAddress;//地址
-    private String livestockAddress;//地址
-    private String plotAddress;//地址
+    private String address;//地址
 }
 
 
