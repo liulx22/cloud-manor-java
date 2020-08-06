@@ -11,7 +11,7 @@
     <select id="huiXianComment" resultType="com.buba.cloud.cloudManor.pojo.Comment">
      select image.img_dir imgDir,`user`.user_name userName,
     `comment`.time,`comment`.resource_id resourceId,`comment`.user_id userId,`comment`.content,`comment`.pid
-     from comment LEFT JOIN  user  on `comment`.pid=`user`.id
+     from comment LEFT JOIN  user  on `comment`.user_id=`user`.id
      LEFT JOIN image on image.id=`user`.image_id
      LEFT JOIN resource on `user`.id=resource.uid
      and resource.id=#{resourceId}

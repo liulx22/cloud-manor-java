@@ -80,15 +80,20 @@ public class CommentServiveImpl implements CommentServive {
     @Override
     public int delete(int id,Integer userId) {
 
-        String a=userId.toString();//用户的readis+1
-        Integer addcomment = (Integer) redisUtils.hget(a, "commentnum" + a);//获取用户redis的这个值：0
-        if(addcomment==null){
-            addcomment=0;
+        int i = commentMapper.delete(id, userId);
+        if(i!=0){
+            String a=userId.toString();//用户的readis+1
+            Integer addcomment = (Integer) redisUtils.hget(a, "commentnum" + a);//获取用户redis的这个值：0
+            if(addcomment==null){
+                addcomment=0;
+            }
+            redisUtils.hset(a,"commentnum"+a,addcomment-1);//让redis的值增加： 1
+            int  addcomment2 = (int)redisUtils.hget(a, "commentnum" + a);//获取添加后的值: 1
+            System.out.println("该用户下还剩"+addcomment2+"条评论");
+            return  addcomment2;
         }
-        redisUtils.hset(a,"commentnum"+a,addcomment-1);//让redis的值增加： 1
-        int  addcomment2 = (int)redisUtils.hget(a, "commentnum" + a);//获取添加后的值: 1
-        System.out.println("该用户下还剩"+addcomment2+"条评论");
-        return  addcomment2;
+        return i;
+
 
 
     }

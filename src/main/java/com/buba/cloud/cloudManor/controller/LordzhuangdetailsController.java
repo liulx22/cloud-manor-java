@@ -7,9 +7,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.buba.cloud.cloudManor.pojo.Comment;
 import com.buba.cloud.cloudManor.pojo.Image;
 import com.buba.cloud.cloudManor.pojo.Resource;
+import com.buba.cloud.cloudManor.pojo.UserLike;
 import com.buba.cloud.cloudManor.service.CommentServive;
 import com.buba.cloud.cloudManor.service.ImageService;
 import com.buba.cloud.cloudManor.service.ResourceService;
+import com.buba.cloud.cloudManor.service.UserLikeService;
 import com.buba.cloud.cloudManor.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +30,8 @@ public class LordzhuangdetailsController {
     private ImageService imageService;
     @Autowired
     private CommentServive commentServive;
+    @Autowired
+    private UserLikeService userLikeService;
     @Autowired
     private RedisUtils redisUtils;
 
@@ -179,5 +183,40 @@ public class LordzhuangdetailsController {
         System.out.println( "success_jsonpSelectYuLan("+JSONObject.toJSONString(dian)+")");
         return  "success_jsonpSelectYuLan("+JSONObject.toJSONString(dian)+")";
     }
+
+    /**
+     * 功能描述:获取点赞数
+     * @Param: [Integer resourceId]
+     * @Return: String
+     * @Author: zah
+     * @Date: 2020/7/27 0027 15:04
+     */
+    @RequestMapping("selectresourcelik")
+    @ResponseBody
+    public String selectresourcelik(Integer resourceId) {
+        int counts = userLikeService.selectresourcelik(resourceId);
+        return "success_jsonpSelectYuLan(" + JSONObject.toJSONString(counts) + ")";
+    }
+
+    /**
+     * 功能描述:取消喜欢的作品，减少赞
+     * @Param: [Integer resourceId]
+     * @Return: String
+     * @Author: zah
+     * @Date: 2020/7/27 0027 15:04
+     */
+    @RequestMapping("/deleUserLike")
+    @ResponseBody
+    public String deleUserLike(Integer user_id, Integer resource_id) {
+        UserLike userLike = new UserLike();
+        userLike.setUserId(user_id);
+        userLike.setRresourceId(resource_id);
+        int userLikes = userLikeService.deleUserLike(userLike);
+        if (userLikes != 0) {
+            return "success_jsonp5(" + JSONObject.toJSONString(userLikes) + ")";
+        }
+        return "success_jsonp5(" + JSONObject.toJSONString(0) + ")";
+    }
+
 
 }

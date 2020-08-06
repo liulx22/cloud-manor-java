@@ -35,11 +35,11 @@ public class UserLikeServiceImpl implements UserLikeService {
         int i = userLikeMapper.addUserLike(userLike);//添加mysql操作
         if (i != 0) {//如果成功添加至mysql
             boolean manor_like_number = redisUtils.hHasKey("manor_like_number", "manor_" + userId);//判断该key与itm是否存在
-            if (manor_like_number==false){//如果不存在
+            if (manor_like_number == false) {//如果不存在
                 redisUtils.hset("manor_like_number", "manor_" + userId, 1);//设置初始值并为1
-            }else {//如果该key与itm存在
+            } else {//如果该key与itm存在
                 Integer manor_like_number1 = (Integer) redisUtils.hget("manor_like_number", "manor_" + userId);//获取redis中的喜欢量
-                redisUtils.hset("manor_like_number", "manor_" + userId, manor_like_number1+1);//让redis中的喜欢量加一
+                redisUtils.hset("manor_like_number", "manor_" + userId, manor_like_number1 + 1);//让redis中的喜欢量加一
             }
             boolean resource_like_number = redisUtils.hHasKey("resource_like_number", "resourceId_" + rresourceId);//判断该key与itm是否存在
             if (resource_like_number == false) {//如果不存在
@@ -79,14 +79,26 @@ public class UserLikeServiceImpl implements UserLikeService {
         }
         return (Integer) redisUtils.hget("resource_like_number", "resourceId_" + rresourceId);//返回redis的点赞量
     }
-//获取喜欢的作品数量
+
+    //获取喜欢的作品数量
     @Override
     public int selectuserlikemanor(Integer userId) {
-        return (Integer) redisUtils.hget("manor_like_number", "manor_" + userId);
+        boolean manor_like_number = redisUtils.hHasKey("manor_like_number", "manor_" + userId);//判断该key与itm是否存在
+        if (manor_like_number == false) {//如果没有
+            redisUtils.hset("manor_like_number", "manor_" + userId, 0);//设置初始值并为0
+            return (Integer) redisUtils.hget("manor_like_number", "manor_" + userId);//返回获取的redis中的点赞量;
+        }
+        return (Integer) redisUtils.hget("manor_like_number", "manor_" + userId);//返回redis中喜欢的作品数量
     }
-//获取作品的点赞量
+
+    //获取作品的点赞量
     @Override
     public int selectresourcelik(Integer rresourceId) {
-        return  (int)redisUtils.hget("resource_like_number", "resourceId_" + rresourceId);
+        boolean resource_like_number = redisUtils.hHasKey("resource_like_number", "resourceId_" + rresourceId);//判断该key与itm是否存在
+        if (resource_like_number == false) {//如果没有
+            redisUtils.hset("resource_like_number", "resourceId_" + rresourceId, 0);//设置初始值并为0
+            return (Integer) redisUtils.hget("resource_like_number", "resourceId_" + rresourceId);
+        }
+        return (int) redisUtils.hget("resource_like_number", "resourceId_" + rresourceId);//返回获取redis中的作品点赞量
     }
 }

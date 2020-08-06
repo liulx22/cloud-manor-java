@@ -3,32 +3,50 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.buba.cloud.cloudManor.mapper.BuyMapper">
     <insert id="addOrder">
-       INSERT INTO `order` (order_no, order_time,user_id,resource_id,`desc`,money,digital_code )
+       INSERT INTO `orders` (order_no, order_time,user_id,resource_id,`desc`,money,digital_code )
                        VALUES
                        (#{orderNo}, now(),#{userId}, #{resourceId},#{desc}, #{money},#{digitalCode});
 
     </insert>
     <!--通过资源id获取养护人信息-->
     <select id="obtainMaintenancePeopleMessage" resultType="com.buba.cloud.cloudManor.pojo.User">
-       SELECT
-            us.user_name,us.id
-            ,(select image.img_dir from image where us.image_id = image.id)  as imgDir
-        FROM
-            USER us,resource
-            where us.id  = resource.uid
-            and
-            resource.id  =#{resourceId}
+    SELECT
+	us.user_name,
+	us.id,
+	(
+	SELECT
+		image.img_dir
+	FROM
+		image,
+		img_rlation
+	WHERE
+		us.id = img_rlation.other_id
+		and
+		img_rlation.image_id = image.id
+		and
+		img_rlation.type_code = 18
+
+		 ) as img_dir
+    FROM
+        user us,
+        resource
+    WHERE
+        us.id = resource.uid
+        AND resource.id = #{resourceId}
+
 
     </select>
     <!--  通过user id查询对应的资源数量  -->
     <select id="resourceMessage" resultType="com.buba.cloud.cloudManor.pojo.Resource">
-         SELECT
-            resource.*,
-            image.img_dir AS imgDir
-        FROM
-            resource
-            LEFT JOIN image ON resource.image_id = image.id
-        WHERE
-            resource.id =  #{resourceId}
+    SELECT
+        resource.*,
+        image.img_dir AS imgDir
+    FROM
+        resource
+        LEFT JOIN img_rlation ON resource.id = img_rlation.other_id
+        AND img_rlation.type_code = 1
+        LEFT JOIN image ON image.id = img_rlation.image_id
+    WHERE
+        resource.id = #{resourceId}
     </select>
 </mapper>
