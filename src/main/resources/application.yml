@@ -3,7 +3,7 @@ spring:
     url: jdbc:mysql://123.56.254.245:3306/cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
   redis:
     database: 1
     host: 123.56.254.245
@@ -28,6 +28,6 @@ logging:
     com.buba.cloud.cloudManor.mapper: debug
 
 server:
-  port: 8080
+  port: 8088
 
 

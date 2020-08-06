@@ -11,7 +11,7 @@
     <groupId>com.buba.cloud</groupId>
     <artifactId>cloud-manor-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>user-service-demo</name>
+    <name>cloud-manor-java</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -65,7 +65,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>5.1.6</scope>
+            <version>5.1.6</version>
         </dependency>
         <dependency>
             <groupId>tk.mybatis</groupId>
