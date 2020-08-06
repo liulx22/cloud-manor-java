@@ -51,8 +51,9 @@ public class AttentionServiceImpl implements AttentionService {
 
       }
       //返回关注量
-        Integer manor_attention_num10 = (Integer) redisUtils.hget("manor_attention_num", "manor_id" + userId2);
-        return manor_attention_num10;
+        //Integer manor_attention_num10 = (Integer) redisUtils.hget("manor_attention_num", "manor_id" + userId2);
+     //   1成功 0失败
+        return 1;
     }
 
     @Override
@@ -84,8 +85,9 @@ public class AttentionServiceImpl implements AttentionService {
             }
         }
         //返回关注数量
-        Integer manor_attention_num_4 = (Integer) redisUtils.hget("manor_attention_num", "manor_id" + userId2);
-        return manor_attention_num_4;
+       // Integer manor_attention_num_4 = (Integer) redisUtils.hget("manor_attention_num", "manor_id" + userId2);
+        //1成功 0失败
+        return 1;
     }
 
     @Override
