@@ -11,7 +11,7 @@ User pullMaintenanceInformation(Integer userId);-->
           FROM
               `user` us,image
           WHERE
-              us.image_id = image.id and image.code_type='user_head' AND us.id  = #{userId}
+              us.image_id = image.id and image.type_code='user_head' AND us.id  = #{userId}
 
     </select>
 <!--  通过user id查询对应资源数量
