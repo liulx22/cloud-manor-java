@@ -22,12 +22,13 @@
     List<AgricultureOperation> GETAgricultureOperation(@Param("id") int rid，int mid);-->
     <select id="GETAgricultureOperation" resultType="com.buba.cloud.cloudManor.pojo.AgricultureOperation">
         select a.id,a.oper_time,a.title,image.img_name,image.img_dir
-        from agriculture_operation as a,img_rlation,image,resource
+        from agriculture_operation as a,img_rlation,image,resource,digital
         where resource.id=a.resource_id
+        and digital.code="maint_records"
+        and digital.id=img_rlation.type_code
         and a.id=img_rlation.other_id
         and img_rlation.image_id=image.id
 		and resource.master_id=#{mid}
-        and image.type_code="maint_records"
         and a.resource_id=#{rid}
     </select>
 </mapper>
