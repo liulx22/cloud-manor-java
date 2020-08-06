@@ -185,7 +185,7 @@ public class LordzhuangdetailsController {
 
     /**
      * 功能描述:获取点赞数
-     * @Param: [Integer userid]
+     * @Param: [Integer resourceId]
      * @Return: String
      * @Author: zah
      * @Date: 2020/7/27 0027 15:04
