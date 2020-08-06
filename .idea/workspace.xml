@@ -2,111 +2,169 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91d1f357-30de-42de-b15c-d54292aceae6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/CultivatePersonCenterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/CultivatePersonCenterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-manor-java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-manor-java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/CloudManorJavaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/CloudManorJavaApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/config/RedisConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/AttentionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/AttentionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/BuyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/BuyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/LordzhuangdetailsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/LordzhuangdetailsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/MyManorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/MyManorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/UserLikeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/controller/UserLikeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/AttentionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/AttentionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/BuyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/BuyMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/CommentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ImageMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ImageMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/MyManorMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/MyManorMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ResourceAnimalDetailMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ResourceAnimalDetailMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ResourceGroundDetailMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ResourceGroundDetailMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ResourceMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ResourceMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ResourceTreeDetailMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/ResourceTreeDetailMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/UserLikeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/mapper/UserLikeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Agriculture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Agriculture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/AgricultureOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/AgricultureOperation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Attention.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Attention.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/BandCardAndUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/BandCardAndUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/BankCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/BankCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Digital.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Digital.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/FavoriteRelation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/FavoriteRelation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Image.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ImgRlation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ImgRlation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ManorAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ManorAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/MasterAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/MasterAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/OrderAgricultureVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/OrderAgricultureVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Resource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/Resource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ResourceAnimalDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ResourceAnimalDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ResourceGroundDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ResourceGroundDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ResourceTreeDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ResourceTreeDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ResourceType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/ResourceType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/TotalAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/TotalAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/UserAttentionVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/UserAttentionVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/UserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/UserLike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/pojo/UserLike.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/AttentionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/AttentionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/BuyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/BuyService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/CommentServive.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/CommentServive.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/ImageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/ImageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/MyManorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/MyManorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/ResourceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/UserLikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/UserLikeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/AttentionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/AttentionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/BuyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/BuyServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/CommentServiveImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/CommentServiveImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/ImageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/ImageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/MyManorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/MyManorServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/ResourceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/ResourceServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/UserLikeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/service/impl/UserLikeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/test/arithmeticTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/test/arithmeticTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/utils/RedisUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/buba/cloud/cloudManor/utils/RedisUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/BuyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/BuyMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ResourceDetailsMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ResourceDetailsMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CultivatePersonCenterService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/CultivatePersonCenterService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyManorController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/MyManorController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CultivatePersonCenterImpl.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/impl/CultivatePersonCenterImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="113" column="37" lean-forward="true" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
+            <state relative-caret-position="2727">
+              <caret line="113" column="26" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CorsConfig.java" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/config/CorsConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="297">
+              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentServive.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/impl/UserLikeServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="102" column="5" selection-start-line="101" selection-start-column="108" selection-end-line="102" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/LordzhuangdetailsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="198" column="1" lean-forward="true" selection-start-line="198" selection-start-column="1" selection-end-line="198" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/UserLikeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/CommentServive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
+            <state relative-caret-position="405">
               <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserLikeService.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/UserLikeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            <state relative-caret-position="95">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AttentionService.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/AttentionService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="378">
               <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReleaseResourceController.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/ReleaseResourceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
+            <state relative-caret-position="864">
               <caret line="52" column="57" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="567">
               <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
             </state>
           </provider>
@@ -116,6 +174,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -125,19 +188,15 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ResourceDetailsMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/impl/CultivatePersonCenterImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/CultivatePersonCenterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/UserLikeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/LordzhuangdetailsController.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/maven/apache-maven-3.5.0" />
+        <option name="mavenHome" value="F:/apache-maven-3.5.0" />
         <option name="userSettingsFile" value="D:\maven\apache-maven-3.5.0\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -172,14 +231,11 @@
       <select />
     </treeState>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="247" />
-    <option name="y" value="28" />
-    <option name="width" value="1428" />
-    <option name="height" value="804" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-14" />
+    <option name="y" value="26" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -247,26 +303,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cloudManor" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloud-manor-java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloud-manor-java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudManor" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloud-manor-java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloud-manor-java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudManor" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cloud-manor-java" type="b2602c69:ProjectViewProjectNode" />
@@ -301,9 +338,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,10 +347,14 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -338,48 +378,32 @@
   <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="CloudManorJavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="cloud-manor-java" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.buba.cloud.cloudManor.CloudManorJavaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
+    <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -397,6 +421,8 @@
       <workItem from="1596423122030" duration="7122000" />
       <workItem from="1596511296797" duration="9107000" />
       <workItem from="1596607315911" duration="7345000" />
+      <workItem from="1596677599496" duration="745000" />
+      <workItem from="1596690378110" duration="1239000" />
     </task>
     <task id="LOCAL-00001" summary="孙智慧">
       <created>1596528255050</created>
@@ -440,54 +466,59 @@
       <option name="project" value="LOCAL" />
       <updated>1596613122509</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="孙智慧-接口sql2">
+      <created>1596691089773</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596691089773</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26554000" />
+    <option name="totallyTimeSpent" value="28538000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="198" y="23" width="1142" height="643" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5033512" side_tool="true" weight="0.33612272" />
-      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.051660515" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35779122" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49865952" weight="0.32775453" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4966488" weight="0.33472803" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49815497" visible="true" weight="0.39648438" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34594095" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49815497" weight="0.06710311" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5033512" side_tool="true" weight="0.33551556" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49865952" weight="0.32733223" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.4966488" visible="true" weight="0.33387887" />
+      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.051660515" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Maven" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="孙智慧" />
@@ -496,63 +527,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="孙智慧-接口sql2" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/CloudManorJavaApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/pojo/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ResourceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/pojo/AgricultureOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ResourceDetailsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/CloudManorJavaApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -733,20 +707,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/ReleaseResourceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="52" column="57" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ReleaseResourceMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-810" />
@@ -782,66 +742,171 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ResourceDetailsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/AttentionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/UserLikeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/CommentServive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/MyManorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+        <state relative-caret-position="837">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/CultivatePersonCenterService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="702">
           <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/MyManorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/impl/CultivatePersonCenterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="113" column="37" lean-forward="true" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
+        <state relative-caret-position="2727">
+          <caret line="113" column="26" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/config/CorsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="297">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/UserLikeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/CommentServive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/AttentionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/ReleaseResourceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="52" column="57" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/impl/UserLikeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="102" column="5" selection-start-line="101" selection-start-column="108" selection-end-line="102" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/service/UserLikeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/buba/cloud/cloudManor/controller/LordzhuangdetailsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="198" column="1" lean-forward="true" selection-start-line="198" selection-start-column="1" selection-end-line="198" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
