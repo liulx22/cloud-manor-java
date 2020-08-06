@@ -27,6 +27,7 @@ public interface CultivatePersonCenterService {
     //添加农事表
     boolean batchCommitResources(Integer userId, String content, int i);
 
+
     //通过资源id删除资源表数据
     boolean deleteResources(int i);
 
