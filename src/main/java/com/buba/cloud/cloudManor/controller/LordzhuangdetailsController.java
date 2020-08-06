@@ -7,6 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.buba.cloud.cloudManor.pojo.Comment;
 import com.buba.cloud.cloudManor.pojo.Image;
 import com.buba.cloud.cloudManor.pojo.Resource;
+import com.buba.cloud.cloudManor.pojo.UserLike;
 import com.buba.cloud.cloudManor.service.CommentServive;
 import com.buba.cloud.cloudManor.service.ImageService;
 import com.buba.cloud.cloudManor.service.ResourceService;
@@ -197,4 +198,25 @@ public class LordzhuangdetailsController {
         return "success_jsonpSelectYuLan(" + JSONObject.toJSONString(counts) + ")";
     }
 
+    /**
+     * 功能描述:取消喜欢的作品，减少赞
+     * @Param: [Integer resourceId]
+     * @Return: String
+     * @Author: zah
+     * @Date: 2020/7/27 0027 15:04
+     */
+    @RequestMapping("/deleUserLike")
+    @ResponseBody
+    public String deleUserLike(Integer user_id, Integer resource_id) {
+        UserLike userLike = new UserLike();
+        userLike.setUserId(user_id);
+        userLike.setRresourceId(resource_id);
+        int userLikes = userLikeService.deleUserLike(userLike);
+        if (userLikes != 0) {
+            return "success_jsonp5(" + JSONObject.toJSONString(userLikes) + ")";
+        }
+        return "success_jsonp5(" + JSONObject.toJSONString(0) + ")";
     }
+
+
+}
