@@ -112,10 +112,12 @@ public class BuyController {
             //去数据库查询该订单为今日的第几份订单 用于生成订单编号
             orderRunningNum = buyService.orderRunningNum();
             if (orderRunningNum != null) {
-                String format = threeNum.format(orderRunningNum + 1);
-                order.setOrderNo(datenum + format);
+                //使用时间和流水号进行拼接 并且转换类型
+                Long s = Long.parseLong(datenum + threeNum.format(orderRunningNum + 1));
+                order.setOrderNo(s);
             } else {
-                String format = threeNum.format(1);
+                //使用时间和流水号进行拼接 并且转换类型
+                Long format = Long.parseLong(threeNum.format(1));
                 order.setOrderNo(datenum + format);
             }
             //通过资源id去查询该商品的金额，为了确保前端篡改金额
