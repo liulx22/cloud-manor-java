@@ -10,6 +10,7 @@ import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.service.CommentServive;
 import com.buba.cloud.cloudManor.service.ImageService;
 import com.buba.cloud.cloudManor.service.ResourceService;
+import com.buba.cloud.cloudManor.service.UserLikeService;
 import com.buba.cloud.cloudManor.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,8 @@ public class LordzhuangdetailsController {
     private ImageService imageService;
     @Autowired
     private CommentServive commentServive;
+    @Autowired
+    private UserLikeService userLikeService;
     @Autowired
     private RedisUtils redisUtils;
 
@@ -178,6 +181,19 @@ public class LordzhuangdetailsController {
         Object dian=  redisUtils.get(key);
         System.out.println( "success_jsonpSelectYuLan("+JSONObject.toJSONString(dian)+")");
         return  "success_jsonpSelectYuLan("+JSONObject.toJSONString(dian)+")";
+    }
+    /**
+     * 功能描述:获取点赞数
+     * @Param: [Integer userid]
+     * @Return: String
+     * @Author: zah
+     * @Date: 2020/7/27 0027 15:04
+     */
+    @RequestMapping("selectresourcelik")
+    @ResponseBody
+    public String selectresourcelik(Integer resourceId) {
+        int counts=userLikeService.selectresourcelik(resourceId);
+        return "success_jsonpSelectYuLan("+JSONObject.toJSONString(counts)+")";
     }
 
 }
