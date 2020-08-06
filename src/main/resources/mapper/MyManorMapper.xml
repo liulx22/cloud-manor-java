@@ -65,12 +65,10 @@
 
     <!-- 获取首页视频地址和信息 List<IndexVO> getIndex(); -->
     <select id="getIndex" resultType="com.buba.cloud.cloudManor.pojo.IndexVO">
-        SELECT resource.id,resource.title,resource.reTypeCode,image.img_dir,resourceanimaldetail.geographic_position as fruiterAddress,
-        resourcegrounddetail.geographic_position as fruiterAddress,resourcetreedetail.geographic_position as plotAddress
-        FROM resource LEFT JOIN image ON resource.imageId=image.id
-        LEFT JOIN resourceanimaldetail ON resource.id=resourceanimaldetail.resource_id
-        LEFT JOIN resourcegrounddetail ON resource.id=resourcegrounddetail.resource_id
-        LEFT JOIN resourcetreedetail ON resource.id=resourcetreedetail.resource_id
+        SELECT resource.id,resource.title,resource.re_type_code AS reTypeCode,image.img_dir AS videoPath,address.name AS address
+        FROM resource LEFT JOIN image ON resource.image_id=image.id
+        LEFT JOIN user ON resource.uid = user.id
+        LEFT JOIN address ON user.address_id = address.id
     </select>
 
 </mapper>
