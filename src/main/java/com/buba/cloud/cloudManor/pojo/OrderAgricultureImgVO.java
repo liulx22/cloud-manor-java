@@ -15,10 +15,10 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class OrderAgricultureVO {
-    private Integer aId;//农事id
-    private Integer orderId;//订单id
-    private Integer resourceId;//产品（资源）Id
-    private String content;//农事内容
-    private List<OrderAgricultureImgVO> orderAgricultureImgVO;
+public class OrderAgricultureImgVO {
+    private Integer imgId;//图片/视频id
+    private String imgName;//图片名称
+    private String imgDir;//存放路径
+    private String typeCode;//图片类型
+
 }
