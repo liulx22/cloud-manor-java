@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buba.cloud.cloudManor.mapper.AgricultureOperationMapper">
+    <!--//添加养护记录
+    boolean addAgricultureOperation(AgricultureOperation agricultureOperation);-->
+
+    <insert id="addAgricultureOperation" useGeneratedKeys="true" keyProperty="id">
+        insert into agriculture_operation(aid,resource_id,oper_time,title)  values (1,1,#{operTime},#{title})
+    </insert>
+
+    <!--//添加图片视频
+    boolean addImage(Image image);-->
+    <insert id="addImage" useGeneratedKeys="true" keyProperty="id">
+        insert into image values (null,#{img_name},#{img_dir},'maint_records',NULL )
+    </insert>
+  <!--  //添加中间表
+    boolean addImgRlation(ImgRlation imgRlation);-->
+   <insert id="addImgRlation">
+       insert into img_relation values(null,11,#{img_id},#{other_id})
+   </insert>
+
+</mapper>
