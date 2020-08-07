@@ -192,7 +192,7 @@ public class LordzhuangdetailsController {
     @ResponseBody
     public String selectresourcelik(Integer resourceId) {
         int counts = userLikeService.selectresourcelik(resourceId);
-        return "success_jsonpSelectYuLan(" + JSONObject.toJSONString(counts) + ")";
+        return "success_jsonpResourceLik(" + JSONObject.toJSONString(counts) + ")";
     }
 
     /**
