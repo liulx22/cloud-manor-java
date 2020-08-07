@@ -6,6 +6,8 @@ import com.buba.cloud.cloudManor.pojo.User;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
+import java.util.List;
+
 /**
  * @ProjectName: cloud-manor-java
  * @Package: com.buba.cloud.cloudManor.mapper
@@ -25,4 +27,6 @@ public interface BuyMapper extends Mapper<User> {
 
     //录入订单信息
     Boolean addOrder(Order order);
+    //返回已购买数量
+    List<Order> findBuyCount();
 }
