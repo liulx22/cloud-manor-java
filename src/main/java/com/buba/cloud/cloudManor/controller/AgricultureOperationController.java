@@ -56,7 +56,7 @@ public class AgricultureOperationController {
         }*/
 
         boolean b = agricultureOperationService.addAgricultureOperation(agricultureOperation);
-        return true;
+        return b;
     }
 
     @RequestMapping("/image_video")
