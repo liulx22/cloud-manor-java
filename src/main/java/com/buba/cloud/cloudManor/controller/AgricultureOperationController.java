@@ -122,9 +122,9 @@ public class AgricultureOperationController {
                         image.setImgName(imgName);
                         image.setTypeCode(typecode);
                         //图片上传数据库
-                       /* if (resourceid != null) {
+                        if (resourceid != null) {
                             b = agricultureOperationService.mainImgadd(image, resourceid);
-                        }*/
+                        }
                     }
                     i++;
                 }
