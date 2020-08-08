@@ -3,7 +3,9 @@
 <mapper namespace="com.buba.cloud.cloudManor.mapper.InformationMapper">
     <!--//个人信息查询  User echoUserInfo(int userId);-->
     <select id="echoUserInfo" resultType="User">
-        select * from user where id=#{userId}
+        SELECT * FROM `user` u
+        LEFT JOIN address a ON a.`id` = u.`address_id`
+        WHERE u.id=#{userId}
     </select>
     <!--//修改个人信息  boolean editUserInfo(User user);-->
     <update id="editUserInfo">

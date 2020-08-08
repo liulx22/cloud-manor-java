@@ -4,14 +4,8 @@ package com.buba.cloud.cloudManor.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-import com.buba.cloud.cloudManor.pojo.Comment;
-import com.buba.cloud.cloudManor.pojo.Image;
-import com.buba.cloud.cloudManor.pojo.Resource;
-import com.buba.cloud.cloudManor.pojo.UserLike;
-import com.buba.cloud.cloudManor.service.CommentServive;
-import com.buba.cloud.cloudManor.service.ImageService;
-import com.buba.cloud.cloudManor.service.ResourceService;
-import com.buba.cloud.cloudManor.service.UserLikeService;
+import com.buba.cloud.cloudManor.pojo.*;
+import com.buba.cloud.cloudManor.service.*;
 import com.buba.cloud.cloudManor.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +26,9 @@ public class LordzhuangdetailsController {
     private CommentServive commentServive;
     @Autowired
     private UserLikeService userLikeService;
+    @Autowired
+    private BuyService buyService;
+
     @Autowired
     private RedisUtils redisUtils;
 
@@ -195,7 +192,7 @@ public class LordzhuangdetailsController {
     @ResponseBody
     public String selectresourcelik(Integer resourceId) {
         int counts = userLikeService.selectresourcelik(resourceId);
-        return "success_jsonpSelectYuLan(" + JSONObject.toJSONString(counts) + ")";
+        return "success_jsonpResourceLik(" + JSONObject.toJSONString(counts) + ")";
     }
 
     /**
@@ -218,5 +215,20 @@ public class LordzhuangdetailsController {
         return "success_jsonp5(" + JSONObject.toJSONString(0) + ")";
     }
 
+
+    /**
+     * 功能描述:查看已购买数量
+     * @Param: [Integer resourceId]
+     * @Return: String
+     * @Author: zah
+     * @Date: 2020/7/27 0027 15:04
+     */
+    @RequestMapping("/findBuyCount")
+    @ResponseBody
+    public String findBuyCount() {
+       List<Order> ordersCount=  buyService.findBuyCount();
+        System.out.println("查看已购买数量success_jsonpOrdersCount(" + JSONObject.toJSONString(ordersCount) + ")");
+        return "success_jsonpOrdersCount(" + JSONObject.toJSONString(ordersCount) + ")";
+    }
 
 }
