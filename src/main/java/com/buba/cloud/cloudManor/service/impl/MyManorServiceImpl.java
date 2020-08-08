@@ -51,7 +51,11 @@ public class MyManorServiceImpl implements MyManorService {
     //获取我的庄园 当前农事和视频
     @Override
     public List<OrderAgricultureVO> getOrderAgriculture(Integer userId) {
-        return myManorMapper.getOrderAgriculture(userId);
+        List<OrderAgricultureVO> list = myManorMapper.getOrderAgriculture(userId);
+        for (OrderAgricultureVO orderAgricultureVO : list) {
+            System.out.println(orderAgricultureVO);
+        }
+        return list;
     }
 
     /**

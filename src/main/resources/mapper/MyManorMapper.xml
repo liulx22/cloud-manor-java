@@ -38,16 +38,29 @@
     //获取我的庄园 当前农事和视频
     List<OrderAgricultureVO> getOrderAgriculture(Integer userId);
     -->
-    <select id="getOrderAgriculture" resultType="com.buba.cloud.cloudManor.pojo.OrderAgricultureVO">
-            select #{userId} as userId,o.id orderId,r.id resourceId,a.content content,i.img_name imgName,
-             i.img_dir imgDir from
-            orders o,image i,img_rlation ir,resource r,agriculture a,agriculture_operation ao
-            where o.resource_id = r.id
-            and r.id = a.resource_id
-            and a.id = ao.aid
-            and ao.id=ir.other_id
-            and ir.image_id=i.id
-            and o.user_id=#{userId}
+    <resultMap id="orderAgricultureMap" type="com.buba.cloud.cloudManor.pojo.OrderAgricultureVO" autoMapping="true">
+        <result property="orderId" column="orderId"></result>
+        <result property="resourceId" column="resourceId"></result>
+        <result property="content" column="content"></result>
+        <result property="aId" column="aId"></result>
+        <collection property="orderAgricultureImgVO" ofType="com.buba.cloud.cloudManor.pojo.OrderAgricultureImgVO" column="aId">
+            <result property="imgName" column="imgName"></result>
+            <result property="imgDir" column="imgDir"></result>
+            <result property="typeCode" column="typeCode"></result>
+            <result property="imgId" column="imgId"></result>
+        </collection>
+    </resultMap>
+    <select id="getOrderAgriculture" resultMap="orderAgricultureMap" >
+            select o.id orderId,r.id resourceId,a.content content,
+             a.id aId,i.img_name imgName,i.img_dir imgDir,i.type_code typeCode,i.id imgId
+             from orders o
+			 left join resource r on o.resource_id = r.id
+			 left join agriculture a on r.id = a.resource_id
+			 left join img_rlation ir on ir.other_id = a.id
+			 left join image i on i.id=ir.image_id
+			 where a.`code`=8
+             and o.user_id=#{userId}
+			 and (ir.type_code=20 or ir.type_code=21)
     </select>
 
     <!-- 获取首页视频地址和信息 List<IndexVO> getIndex(); -->

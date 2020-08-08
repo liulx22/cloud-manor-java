@@ -51,6 +51,25 @@ public class User {
 
     private String imgName;
 
+    private String name;//名称
+    private Integer pId;  //父id
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getpId() {
+        return pId;
+    }
+
+    public void setpId(Integer pId) {
+        this.pId = pId;
+    }
+
     public String getImgName() {
         return imgName;
     }

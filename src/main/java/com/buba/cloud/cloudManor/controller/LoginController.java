@@ -27,7 +27,7 @@ public class LoginController {
     public boolean yzm(String phone){
         int code = (int) ((Math.random()*9+1)*1000);
         //收费的测试几次就可以了
-       // boolean sendMSM = SendSms.sendMSM(phone,String.valueOf(code));
+       boolean sendMSM = SendSms.sendMSM(phone,String.valueOf(code));
         redisUtils.set("code",code,60);
         System.out.println(code);
         if(true){
