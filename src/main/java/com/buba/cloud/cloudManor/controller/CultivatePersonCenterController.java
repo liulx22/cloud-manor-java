@@ -1,5 +1,6 @@
 package com.buba.cloud.cloudManor.controller;
 
+import com.buba.cloud.cloudManor.pojo.BusinessResourceUserVo;
 import com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo;
 import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.pojo.User;
@@ -150,6 +151,28 @@ public class CultivatePersonCenterController {
         }
         //如果为空 返回null
         return false;
+    }
+
+    /**
+     * 功能描述:通过UserId查找该用户对应的主营业务
+     *
+     * @Param: [userId]
+     * @Return: Integer
+     * @Author: zbw
+     * @Date: 2020/7/28 0024 16:20
+     */
+    @RequestMapping("selectBusinessResourceUser")
+    public List<BusinessResourceUserVo> selectBusinessResourceUser(Integer userId) {
+        //判断用户id是否为空
+        if (userId != null) {
+
+                //查找该用户对应的主营业务
+            List<BusinessResourceUserVo> list = cultivatePersonCenterService.selectBusinessResourceUser(userId);
+
+            return list;
+        }
+        //如果为空 返回null
+        return null;
     }
 
 }

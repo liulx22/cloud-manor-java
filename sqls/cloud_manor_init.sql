@@ -427,3 +427,6 @@ INSERT INTO `address` VALUES ('394', '重庆', '32');
 INSERT INTO `address` VALUES ('395', '香港', '33');
 INSERT INTO `address` VALUES ('396', '澳门', '34');
 INSERT INTO `address` VALUES ('397', '台湾', '35');
+
+
+INSERT INTO `user_business` VALUES ('1', '1', '5', '苹果树，梨树，香蕉树');

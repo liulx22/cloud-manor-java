@@ -2,6 +2,7 @@ package com.buba.cloud.cloudManor.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.buba.cloud.cloudManor.mapper.CultivatePersonCenterMapper;
+import com.buba.cloud.cloudManor.pojo.BusinessResourceUserVo;
 import com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo;
 import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.pojo.User;
@@ -140,5 +141,12 @@ public class CultivatePersonCenterImpl implements CultivatePersonCenterService {
     @Override
     public boolean deleteResources(int i) {
         return cultivatePersonCenterMapper.deleteResources( i);
+    }
+    /*通过UserId查找该用户对应的主营业务*/
+    @Override
+    public List<BusinessResourceUserVo> selectBusinessResourceUser(Integer userId) {
+        //查找所有的资源类型表的数据，返回list集合。
+        List<BusinessResourceUserVo> list= cultivatePersonCenterMapper.selectResourceType();
+        return null;
     }
 }

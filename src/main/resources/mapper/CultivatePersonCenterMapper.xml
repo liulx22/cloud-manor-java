@@ -83,4 +83,8 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
     <delete id="deleteResources">
         DELETE FROM resource WHERE resource.id=#{resourceId}
     </delete>
+
+<!--    //查找所有的资源类型表的数据，返回list集合。
+    List<BusinessResourceUserVo> selectResourceType();-->
+
 </mapper>

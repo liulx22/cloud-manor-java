@@ -1,5 +1,6 @@
 package com.buba.cloud.cloudManor.mapper;
 
+import com.buba.cloud.cloudManor.pojo.BusinessResourceUserVo;
 import com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo;
 import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.pojo.User;
@@ -29,4 +30,6 @@ public interface CultivatePersonCenterMapper {
     boolean batchCommitResources(@Param("userId")Integer userId,@Param("content") String content, @Param("resourceId")int resourceId);
     /*通过资源id删除资源*/
     boolean deleteResources(@Param("resourceId")int i);
+    //查找所有的资源类型表的数据，返回list集合。
+    List<BusinessResourceUserVo> selectResourceType();
 }

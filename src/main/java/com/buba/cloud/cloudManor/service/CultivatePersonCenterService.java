@@ -1,5 +1,6 @@
 package com.buba.cloud.cloudManor.service;
 
+import com.buba.cloud.cloudManor.pojo.BusinessResourceUserVo;
 import com.buba.cloud.cloudManor.pojo.CenterControllerResourceVo;
 import com.buba.cloud.cloudManor.pojo.Resource;
 import com.buba.cloud.cloudManor.pojo.User;
@@ -30,5 +31,6 @@ public interface CultivatePersonCenterService {
 
     //通过资源id删除资源表数据
     boolean deleteResources(int i);
-
+    /*通过UserId查找该用户对应的主营业务*/
+    List<BusinessResourceUserVo> selectBusinessResourceUser(Integer userId);
 }
