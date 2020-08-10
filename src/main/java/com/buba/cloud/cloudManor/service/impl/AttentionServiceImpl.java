@@ -106,10 +106,11 @@ public class AttentionServiceImpl implements AttentionService {
 
     @Override
     public int SelectAttention_1(Integer userId) {
-        boolean manor_attention_num_2 = redisUtils.hHasKey("manor_attention_num", "manor_attention" + userId);
+       // Integer userId_1 = (Integer) redisUtils.hget("manor_attention_num_1", "manor_id" + userId);
+        boolean manor_attention_num_2 = redisUtils.hHasKey("manor_attention_num_1", "manor_id" + userId);
         if (manor_attention_num_2==false){
-            //设置初始值并为1
-            redisUtils.hset("manor_attention_num", "manor_attention" + userId, 0);
+            //设置初始值并为0
+            redisUtils.hset("manor_attention_num_1", "manor_id" + userId, 0);
             return  0;
         }
         Integer userId_1 = (Integer) redisUtils.hget("manor_attention_num_1", "manor_id" + userId);

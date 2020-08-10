@@ -56,12 +56,12 @@ public class AgricultureOperationController {
         }*/
 
         boolean b = agricultureOperationService.addAgricultureOperation(agricultureOperation);
-        return true;
+        return b;
     }
 
     @RequestMapping("/image_video")
     @ResponseBody
-    public boolean image_video(String type, HttpServletRequest request) throws IOException {
+    public boolean image_video(String type1, HttpServletRequest request) throws IOException {
         boolean b = false;
         //创建一个通用的多部分解析器
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
@@ -82,16 +82,17 @@ public class AgricultureOperationController {
                 if (file != null) {
                     //取得当前上传文件的文件名称
                     String myFileName = file.getOriginalFilename();
+                    System.out.println(myFileName);
                     //如果名称不为“”,说明该文件存在，否则说明该文件不存在
                     if (myFileName.trim() != "") {
                         //区分数据传过来的是视频还是图片
-                        String typecode = type.substring(0, type.indexOf("_"));
+                        String typecode = type1.substring(0, type1.indexOf("_"));
                         //资源id
-                       Integer resourceid = Integer.valueOf(type.substring(type.indexOf("_") + 1, type.indexOf("/")));
+                       Integer resourceid = Integer.valueOf(type1.substring(type1.indexOf("_") + 1, type1.indexOf("/")));
                         //用户id
-                        String uid = type.substring(type.indexOf("/") + 1, type.indexOf("-"));
+                        String uid = type1.substring(type1.indexOf("/") + 1, type1.indexOf("-"));
                         //用户名字
-                        String username = type.substring(type.indexOf("-") + 1, type.length());
+                        String username = type1.substring(type1.indexOf("-") + 1, type1.length());
 
                         //图片名称
                         String imgName = "";

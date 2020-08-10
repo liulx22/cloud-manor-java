@@ -142,4 +142,9 @@ public class BuyServiceImpl implements BuyService {
     public Boolean addOrder(Order order) {
         return buyMapper.addOrder(order);
     }
+
+    @Override
+    public List<Order> findBuyCount() {
+        return buyMapper.findBuyCount();
+    }
 }

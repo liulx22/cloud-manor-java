@@ -37,7 +37,7 @@ public class AgricultureOperationServiceImpl  implements AgricultureOperationSer
             imgRlation.setOtherId(agricultureOperation.getId());
             agricultureOperationMapper.addImgRlation(imgRlation);
         }*/
-        return false;
+        return b;
     }
 
     @Override
