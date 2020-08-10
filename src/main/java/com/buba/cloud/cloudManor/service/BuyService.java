@@ -37,4 +37,6 @@ public interface BuyService {
 
     //录入订单信息
     Boolean addOrder(Order order);
+
+    List<Order> findBuyCount();
 }

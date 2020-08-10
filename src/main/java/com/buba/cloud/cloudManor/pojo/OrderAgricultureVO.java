@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.util.List;
+
 /**
  * @ClassName OrderAgricultureVO
  * @Description
@@ -14,12 +16,9 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 public class OrderAgricultureVO {
-    private Integer id;
-    private Integer userId;
+    private Integer aId;//农事id
     private Integer orderId;//订单id
     private Integer resourceId;//产品（资源）Id
     private String content;//农事内容
-    private String imgName;//图片名称
-    private String imgDir;//存放路径
-
+    private List<OrderAgricultureImgVO> orderAgricultureImgVO;
 }
