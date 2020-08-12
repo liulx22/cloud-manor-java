@@ -16,4 +16,9 @@ public class ImageServiceImpl implements ImageService {
     public Image findphoto(int userid) {
         return imageMapper.findphoto(userid);
     }
+
+    @Override
+    public Image findResoursePhoto(Integer resourceId) {
+        return imageMapper.findResoursePhoto(resourceId);
+    }
 }

@@ -1,6 +1,7 @@
 package com.buba.cloud.cloudManor.pojo;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -13,6 +14,7 @@ import java.util.Date;
 @Data
 public class Comment {
     private Integer id;
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date time;//评论的时间
     private Integer userId;//关联User表的id,谁评论的
     private String content;//评论内容

@@ -2,9 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.buba.cloud.cloudManor.mapper.ImageMapper">
-<!--庄主详情页回显图片-->
-    <select id="findphoto" resultType="com.buba.cloud.cloudManor.pojo.Image">
-       select image.img_dir imgDir,`user`.user_name userName from user,image  where `user`.image_id=image.id and `user`.id=#{uid}
+    <!--庄主详情页回显图片 资源id对应用户的头像-->
+    <select id="findResoursePhoto" resultType="com.buba.cloud.cloudManor.pojo.Image">
+    select
+      image.img_dir imgDir,`user`.user_name userName
+    from
+      user,image
+    where
+      `user`.image_id=image.id
+    and
+      `user`.id=(
+               SELECT uid FROM resource WHERE id=#{resourceId}
+               )
     </select>
-
+    <!--当前用户评论头像回显 userId-->
+    <select id="findphoto" resultType="com.buba.cloud.cloudManor.pojo.Image">
+       select
+         image.img_dir imgDir,`user`.user_name userName
+       from
+         user,image
+       where
+         `user`.image_id=image.id
+       and
+         `user`.id=#{uid}
+    </select>
 </mapper>
