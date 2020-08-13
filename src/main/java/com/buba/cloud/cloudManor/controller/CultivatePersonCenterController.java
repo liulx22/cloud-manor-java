@@ -174,5 +174,34 @@ public class CultivatePersonCenterController {
         //如果为空 返回null
         return null;
     }
+    /**
+     * 功能描述:通过UserId,资源类型id，主要业务 三个字段添加主营业务表
+     *
+     * @Param: [userId]
+     * @Return: Integer
+     * @Author: zbw
+     * @Date: 2020/7/28 0024 16:20
+     */
+    @RequestMapping("submitBusinessResourceUser")
+    public boolean submitBusinessResourceUser(Integer userId,Integer resourceTypeId,String details) {
+        boolean b=false;
+        //判断用户id是否为空
+        if (userId != null) {
+            //查询userId和资源类型id是否已经存在，存在就修改，不存在就添加
+            Integer count=cultivatePersonCenterService.selectBusinessResourceUserCount(userId,resourceTypeId);
+            System.out.println("找到的数量是++++"+count);
+            if(count!=0){
+                //  已经存在就修改
+                b= cultivatePersonCenterService.updatetBusinessResourceUser(userId,resourceTypeId,details);
+            }else if(count==0){
+                //通过UserId,资源类型id，主要业务 三个字段添加主营业务表
+                 b = cultivatePersonCenterService.submitBusinessResourceUser(userId,resourceTypeId,details);
+            }
 
+
+            return b;
+        }
+        //如果为空 返回null
+        return false;
+    }
 }

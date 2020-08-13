@@ -145,8 +145,36 @@ public class CultivatePersonCenterImpl implements CultivatePersonCenterService {
     /*通过UserId查找该用户对应的主营业务*/
     @Override
     public List<BusinessResourceUserVo> selectBusinessResourceUser(Integer userId) {
+        BusinessResourceUserVo ll=null;
         //查找所有的资源类型表的数据，返回list集合。
         List<BusinessResourceUserVo> list= cultivatePersonCenterMapper.selectResourceType();
-        return null;
+        if(list!=null){
+            for(BusinessResourceUserVo l:list){
+                //拿到资源类型id，去查找该类型id对应的主营业务
+                ll=  cultivatePersonCenterMapper.selectBusinessResourceUser(userId,l.getId());
+                if(ll!=null){
+                    l.setDetails(ll.getDetails());
+                }
+            }
+
+        }
+
+        return list;
+    }
+    //通过UserId,资源类型id，主要业务 三个字段添加主营业务表
+    @Override
+    public boolean submitBusinessResourceUser(Integer userId, Integer resourceTypeId, String details) {
+        boolean b=cultivatePersonCenterMapper.submitBusinessResourceUser( userId,  resourceTypeId,  details);
+        return b;
+    }
+    //查询userId和资源类型id是否已经存在，存在就修改，不存在就添加
+    @Override
+    public Integer selectBusinessResourceUserCount(Integer userId, Integer resourceTypeId) {
+        return cultivatePersonCenterMapper.selectBusinessResourceUserCount( userId,  resourceTypeId);
+    }
+    //  已经存在就修改
+    @Override
+    public boolean updatetBusinessResourceUser(Integer userId, Integer resourceTypeId, String details) {
+        return cultivatePersonCenterMapper.updatetBusinessResourceUser( userId,  resourceTypeId,details);
     }
 }

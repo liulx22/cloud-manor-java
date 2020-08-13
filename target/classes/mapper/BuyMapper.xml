@@ -49,4 +49,14 @@
     WHERE
         resource.id = #{resourceId}
     </select>
+
+    <!--返回已购买数量 List<Order> findBuyCount();-->
+    <select id="findBuyCount" resultType="com.buba.cloud.cloudManor.pojo.Order">
+      select
+        *
+      from
+         orders
+      where
+          digital_code="已支付"
+    </select>
 </mapper>

@@ -33,4 +33,10 @@ public interface CultivatePersonCenterService {
     boolean deleteResources(int i);
     /*通过UserId查找该用户对应的主营业务*/
     List<BusinessResourceUserVo> selectBusinessResourceUser(Integer userId);
+    //通过UserId,资源类型id，主要业务 三个字段添加主营业务表
+    boolean submitBusinessResourceUser(Integer userId, Integer resourceTypeId, String details);
+    //查询userId和资源类型id是否已经存在，存在就修改，不存在就添加
+    Integer selectBusinessResourceUserCount(Integer userId, Integer resourceTypeId);
+    //  已经存在就修改
+    boolean updatetBusinessResourceUser(Integer userId, Integer resourceTypeId, String details);
 }

@@ -26,7 +26,7 @@ public class BusinessResourceUserVo {
     private Integer id;
     private String resourceTypeName;//资源类型表的Name字段
     private Integer resourceTypeId;//资源类型表的id字段
-    private Integer resourceTypeCode;//资源类型表的Code字段
+    private String resourceTypeCode;//资源类型表的Code字段
 
     private Integer userBusinessId;//主营业务User表的id字段
     private Integer UserId;//主营业务User表的id字段
