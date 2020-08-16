@@ -67,4 +67,17 @@ public class MyManorController {
 
         return myManorService.getIndex();
     }
+
+    /**
+     * 查询视频地址和信息
+     * @return
+     */
+    @RequestMapping("getSearch")
+    public List<IndexVO> getSearch(){
+
+
+
+
+        return myManorService.getIndex();
+    }
 }
