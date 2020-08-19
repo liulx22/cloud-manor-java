@@ -25,16 +25,14 @@ public class ResourceGroundDetail {
     private String yield;//产量
     private String proportion;//面积
     private String landType;//土地类型
-    @DateTimeFormat(pattern ="yyyy-MM-dd")
-    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date leaseTime;//承包时间
     private String geographicPosition;//位置
     private Integer id;
     private String title;//标题
     private String reTypeCode;//资源类型的英文名称
     private Integer uid;//发布资源用户id
-    @DateTimeFormat(pattern ="yyyy-MM-dd")
-    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date publicDate;//发布时间
     private Integer imageId;
     private String imgDir;

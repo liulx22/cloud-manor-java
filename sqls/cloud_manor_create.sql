@@ -385,3 +385,20 @@ CREATE TABLE `orders`  (
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
+
+
+-- ----------------------------
+-- Table structure for user_business
+-- ----------------------------
+DROP TABLE IF EXISTS `user_business`;
+CREATE TABLE `user_business` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `resource_type_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `details` varchar(255) DEFAULT NULL COMMENT '业务详情',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_business
+-- ----------------------------

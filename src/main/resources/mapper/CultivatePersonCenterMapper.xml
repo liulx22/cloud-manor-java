@@ -83,4 +83,40 @@ Integer pullTheNumberOfResources(@Param("userId") Integer userId);-->
     <delete id="deleteResources">
         DELETE FROM resource WHERE resource.id=#{resourceId}
     </delete>
+
+<!--    //查找所有的资源类型表的数据，返回list集合。
+    List<BusinessResourceUserVo> selectResourceType();-->
+    <select id="selectResourceType" resultType="com.buba.cloud.cloudManor.pojo.BusinessResourceUserVo">
+    SELECT
+            resource_type.id,resource_type.id resourceTypeId,resource_type.`name` resourceTypeName,resource_type.`code` resourceTypeCode
+    FROM resource_type
+    </select>
+
+<!--    //拿到资源类型id，去查找该类型id对应的主营业务
+    BusinessResourceUserVo selectBusinessResourceUser(@Param("userId")Integer userId,@Param("resourceTypeId")Integer resourceTypeId);-->
+    <select id="selectBusinessResourceUser" resultType="com.buba.cloud.cloudManor.pojo.BusinessResourceUserVo">
+        SELECT * FROM user_business WHERE user_business.resource_type_id=#{resourceTypeId} AND user_business.user_id=#{userId}
+    </select>
+
+<!--    //通过UserId,资源类型id，主要业务 三个字段添加主营业务表
+    boolean submitBusinessResourceUser(@Param("userId")Integer userId, @Param("resourceTypeId")Integer resourceTypeId,@Param("details") String details);-->
+    <insert id="submitBusinessResourceUser" >
+        INSERT INTO
+            user_business(user_business.user_id,user_business.resource_type_id,user_business.details)
+        VALUES(#{userId},#{resourceTypeId},#{details})
+  </insert>
+<!--    //查询userId和资源类型id是否已经存在，存在就修改，不存在就添加
+    Integer selectBusinessResourceUserCount(@Param("userId")Integer userId, @Param("resourceTypeId")Integer resourceTypeId);-->
+    <select id="selectBusinessResourceUserCount" resultType="int">
+        SELECT COUNT(id) FROM user_business WHERE user_business.user_id=#{userId} AND user_business.resource_type_id=#{resourceTypeId}
+    </select>
+
+<!--    //  已经存在就修改
+    boolean updatetBusinessResourceUser(@Param("userId")Integer userId, @Param("resourceTypeId")Integer resourceTypeId, @Param("details")String details);-->
+        <update id="updatetBusinessResourceUser">
+             UPDATE
+                user_business
+            set user_business.details=#{details}
+            WHERE user_business.user_id=#{userId} AND user_business.resource_type_id=#{resourceTypeId}
+        </update>
 </mapper>

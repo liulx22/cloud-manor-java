@@ -59,7 +59,7 @@ public class LordzhuangdetailsController {
                         case "fruiter":
                             resource.setResourceTreeDetail(resourceService.resourceFruiterMessage(resourceId));
                             return "success_jsonp("+JSONObject.toJSONString(resource)+")";
-                           // return  resource;
+                        // return  resource;
                         //如果类型为畜牧
                         case "livestock":
                             resource.setResourceAnimalDetail(resourceService.resourceLivestockMessage(resourceId));
@@ -81,10 +81,27 @@ public class LordzhuangdetailsController {
 
 
 
+    /**
+     * 功能描述:当前资源的用户头像回显
+     * @Param: [userid]
+     * @Return: String
+     * @Author: zah
+     * @Date: 2020/7/27 0027 15:04
+     */
+    @RequestMapping("findResoursePhoto")
+    @ResponseBody
+    public String findResoursePhoto(Integer resourceId){//头像回显-------获取前端uid
+        Image img=imageService.findResoursePhoto(resourceId);
+        if(img!=null){
+            return   "success_jsonpResoursePhoto("+JSONObject.toJSONString(img)+")";
+        }else {
+            return null;
+        }
+    }
 
 
     /**
-     * 功能描述:头像回显
+     * 功能描述:当前用户评论头像回显
      * @Param: [userid]
      * @Return: String
      * @Author: zah
@@ -135,6 +152,7 @@ public class LordzhuangdetailsController {
     @ResponseBody
     public String  huiXianComment(Integer resourceId){//评论----------获取前端传来参数进行添加
         List<Comment> comment=commentServive.huiXianComment(resourceId);
+        System.out.println("名字："+comment.get(0).getUserName()+" 时间"+comment.get(0).getTime());
         return   "success_jsonp6("+JSONObject.toJSONString(comment)+")";
     }
 
@@ -149,9 +167,8 @@ public class LordzhuangdetailsController {
      */
     @RequestMapping("yuLan")
     @ResponseBody
-    public String yuLan(String yuLan,Integer userid) {//-------获取前端参数uid
-        //发布视频用户id
-        String key = "yuLanCount" + userid;
+    public String yuLan(String yuLan,Integer resourceId) {//-------获取前端参数resourceId
+        String key = "yuLanCount" + resourceId;
         if (yuLan =="0") {
             redisUtils.set(key, yuLan);
             //预览数＋1
@@ -174,8 +191,8 @@ public class LordzhuangdetailsController {
      */
     @RequestMapping("selectYuLan")
     @ResponseBody
-    public String selectYuLan(Integer userid){//-------获取前端参数uid
-        String key="yuLanCount"+userid;
+    public String selectYuLan(Integer resourceId){//-------获取前端参数--查看资源的预览量
+        String key="yuLanCount"+resourceId;
         Object dian=  redisUtils.get(key);
         System.out.println( "success_jsonpSelectYuLan("+JSONObject.toJSONString(dian)+")");
         return  "success_jsonpSelectYuLan("+JSONObject.toJSONString(dian)+")";
@@ -226,7 +243,7 @@ public class LordzhuangdetailsController {
     @RequestMapping("/findBuyCount")
     @ResponseBody
     public String findBuyCount() {
-       List<Order> ordersCount=  buyService.findBuyCount();
+        List<Order> ordersCount=  buyService.findBuyCount();
         System.out.println("查看已购买数量success_jsonpOrdersCount(" + JSONObject.toJSONString(ordersCount) + ")");
         return "success_jsonpOrdersCount(" + JSONObject.toJSONString(ordersCount) + ")";
     }

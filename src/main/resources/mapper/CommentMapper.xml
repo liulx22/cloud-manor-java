@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.buba.cloud.cloudManor.mapper.CommentMapper">
-<!--添加评论-->
-  <insert id="addComment">
+    <!--添加评论-->
+    <insert id="addComment">
    INSERT INTO comment (time, user_id,content,resource_id,pid) VALUES (now(), #{userId},#{content},#{resourceId},#{pid})
   </insert>
 
@@ -15,6 +15,7 @@
      LEFT JOIN image on image.id=`user`.image_id
      LEFT JOIN resource on `user`.id=resource.uid
      and resource.id=#{resourceId}
+     ORDER BY  `comment`.time DESC
     </select>
     <!--  List<Comment> getAllWo(int id); 查询评论我的-->
     <select id="getAllWo" resultType="com.buba.cloud.cloudManor.pojo.Comment">
