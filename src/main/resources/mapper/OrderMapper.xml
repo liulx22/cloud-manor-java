@@ -6,5 +6,27 @@
     <select id="orderRunningNum" resultType="int">
         select count(*) from `orders`   where TO_DAYS(order_time) = TO_DAYS(NOW())
     </select>
+    <!--//孙智慧 历史订单
+        List<OrderHistoricalVO> GETOrderHistoricalVO(int userId,String shijian,String leixing);
+-->
+    <select id="GETOrderHistoricalVO" resultType="com.buba.cloud.cloudManor.pojo.OrderHistoricalVO">
+        select orders.id,resource.title,orders.money,orders.order_time,orders.order_no,
+        image.img_dir,orders.digital_code
+        FROM resource,orders,img_rlation,image
+        where orders.resource_id=resource.id
+        and img_rlation.image_id=image.id
+        and img_rlation.other_id=resource.id
+        and img_rlation.type_code=1
+        and orders.user_id=#{userId}
+        <if test="shijian!=0 and shijian!=null and shijian!=1">
+            and DATE_SUB(CURDATE(),INTERVAL #{shijian} DAY) &lt;= orders.order_time
+        </if>
+        <if test="shijian!=0 and shijian!=null and shijian==1">
+            and DATE_SUB(CURDATE(),INTERVAL 1 YEAR) &gt; orders.order_time
+        </if>
+        <if test="leixing!=null and leixing!=''">
+            and orders.digital_code=#{leixing}
+        </if>
+    </select>
 
 </mapper>

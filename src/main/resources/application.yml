@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://123.56.254.245:3306/cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://123.56.254.245:33006/cloud_manor?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8
     username: root
-    password: 123456
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
   redis:
     database: 1
